@@ -24,7 +24,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseProvider } from '../providers/database/database';
 
-//import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { DatabaseProvider } from '../providers/database/database';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    
+    HttpClientModule,
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule
