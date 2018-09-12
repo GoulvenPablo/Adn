@@ -1,0 +1,8 @@
+{
+  "name": "auth",
+  "integrations": {
+    "cordova": {}
+  },
+  "v2": true,
+  "typescript": true
+}
