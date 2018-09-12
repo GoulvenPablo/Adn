@@ -20,8 +20,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthData } from '../providers/auth-data';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { firebaseConfig } from './credentials';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatabaseProvider } from '../providers/database/database';
+
+//import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
+    
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule
@@ -61,6 +64,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       AuthData,
     StatusBar,
     SplashScreen,
+    DatabaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

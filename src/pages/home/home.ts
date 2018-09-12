@@ -22,9 +22,8 @@ export class HomePage {
     constructor(public navCtrl: NavController,
        public authData: AuthData,
         public popoverCtrl: PopoverController,
-         public menuctrl: MenuController,
-       public fireStore: AngularFirestore) {
-         var user= fireStore.doc<any>('users/UEEGjkcGclhTldNBmwHS');
+         public menuctrl: MenuController) {
+
 
   }
   logOut() {
