@@ -7,6 +7,10 @@ import firebase from 'firebase';
 
 import { App, MenuController } from 'ionic-angular';
 
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoadingController, AlertController } from '@ionic/angular';
+import { FirestoreService } from '../../services/data/firestore.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +19,12 @@ import { App, MenuController } from 'ionic-angular';
 export class HomePage {
 
 
-    constructor(public navCtrl: NavController, public authData: AuthData, public popoverCtrl: PopoverController, public menuctrl: MenuController) {
+    constructor(public navCtrl: NavController,
+       public authData: AuthData,
+        public popoverCtrl: PopoverController,
+         public menuctrl: MenuController,
+       public fireStore: AngularFirestore) {
+         var user= fireStore.doc<any>('users/UEEGjkcGclhTldNBmwHS');
 
   }
   logOut() {
@@ -27,6 +36,7 @@ export class HomePage {
   }
 
   presentNotifications(myEvent) {
+
   console.log(myEvent);
   let popover = this.popoverCtrl.create(NotificationsPage);
   popover.present({

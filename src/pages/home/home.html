@@ -30,5 +30,6 @@
   <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
     <ion-icon name="search"></ion-icon> Search
   </button>
+  <pre>{{userDoc | json | async}}</pre>
 
 </ion-content>
