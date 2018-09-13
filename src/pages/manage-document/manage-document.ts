@@ -165,7 +165,7 @@ export class ManageDocumentPage {
                                {
 	                               nom    		 : nom,
 	                               age   : age,
-	                               emloi   : emploi
+	                               emploi   : emploi
 	                           })
          .then((data) =>
          {

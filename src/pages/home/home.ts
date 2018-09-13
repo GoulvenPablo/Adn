@@ -153,7 +153,7 @@ export class HomePage {
          collection   : this._COLL,
          location     : obj
       };
-      this.navCtrl.push('manage-document', { record : params, isEdited : true });
+      this.navCtrl.push(ManageDocumentPage, { record : params, isEdited : true });
    }
 
 
