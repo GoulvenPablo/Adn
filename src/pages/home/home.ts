@@ -6,7 +6,7 @@ import {NotificationsPage} from "../notifications/notifications";
 import {ManageDocumentPage} from "../manage-document/manage-document";
 
 import {MenuController } from 'ionic-angular';
-
+import { AngularFireObject, AngularFireList } from 'angularfire2/database';
 
 
 import { DatabaseProvider } from '../../providers/database/database';
@@ -17,44 +17,20 @@ import { DatabaseProvider } from '../../providers/database/database';
 })
 export class HomePage {
 
-  /**
-  * @name _COLL
-  * @type {string}
-  * @private
-  * @description      Defines the name of the database collection
-  */
  private _COLL 		: string 			= "Britain";
 
 
 
 
- /**
-  * @name _DOC
-  * @type {string}
-  * @private
-  * @description      Defines the initial document ID for the database collection
-  */
+
  private _DOC 		: string 			= "Xy76Re34SdFR1";
 
 
 
-
- /**
-  * @name _CONTENT
-  * @type {any}
-  * @private
-  * @description      Used to store/provide the initial document data for the database collection
-  */
  private _CONTENT  	: any;
 
 
 
- /**
-  * @name locations
-  * @type {any}
-  * @public
-  * @description      Property to store the returned documents from the database collection
-  */
  public locations     : any;
 
     constructor(public navCtrl: NavController,
@@ -68,6 +44,8 @@ export class HomePage {
                    population 	: "8,787,892",
                    established    : "C. 43 AD"
                 };
+
+          
 
   }
 
@@ -116,10 +94,8 @@ export class HomePage {
    /**
     * Retrieve all documents from the specified collection using the
     * getDocuments method of the DatabaseProvider service
-    *
-    * @public
-    * @method retrieveCollection
-    * @return {none}
+
+
     */
    retrieveCollection() : void
    {

@@ -12,14 +12,6 @@ import 'firebase/firestore';
 export class DatabaseProvider {
 
 
-
-   /**
-    * @name _DB
-    * @type {object}
-    * @private
-    * @description     Defines an object for handling interfacing with the
-    				   Cloud Firestore database service
-    */
    private _DB : any;
 
 
@@ -37,13 +29,7 @@ export class DatabaseProvider {
     * Note the use of merge : true flag within the returned promise  - this
     * is needed to ensure that the collection is not repeatedly recreated should
     * this method be called again (we DON'T want to overwrite our documents!)
-    *
-    * @public
-    * @method createAndPopulateDocument
-    * @param  collectionObj    {String}           The database collection we want to create
-    * @param  docID            {String}           The document ID
-    * @param  dataObj          {Any}              The document key/values to be added
-    * @return {Promise}
+
     */
    createAndPopulateDocument(collectionObj : string,
                              docID         : string,
@@ -71,10 +57,7 @@ export class DatabaseProvider {
    /**
     * Return documents from specific database collection
     *
-    * @public
-    * @method getDocuments
-    * @param  collectionObj    {String}           The database collection we want to retrieve records from
-    * @return {Promise}
+
     */
    getDocuments(collectionObj : string) : Promise<any>
    {
@@ -120,11 +103,7 @@ export class DatabaseProvider {
    /**
     * Add a new document to a selected database collection
     *
-    * @public
-    * @method addDocument
-    * @param  collectionObj    {String}           The database collection we want to add a new document to
-    * @param  docObj           {Any}              The key/value object we want to add
-    * @return {Promise}
+
     */
    addDocument(collectionObj : string,
              dataObj       : any) : Promise<any>
@@ -149,10 +128,7 @@ export class DatabaseProvider {
     * Delete an existing document from a selected database collection
     *
     * @public
-    * @method deleteDocument
-    * @param  collectionObj    {String}           The database collection we want to delete a document from
-    * @param  docObj           {Any}              The document we wish to delete
-    * @return {Promise}
+
     */
    deleteDocument(collectionObj : string,
                 docID         : string) : Promise<any>
@@ -179,12 +155,7 @@ export class DatabaseProvider {
    /**
     * Update an existing document within a selected database collection
     *
-    * @public
-    * @method updateDocument
-    * @param  collectionObj    {String}           The database collection to be used
-    * @param  docID            {String}           The document ID
-    * @param  dataObj          {Any}              The document key/values to be updated
-    * @return {Promise}
+
     */
    updateDocument(collectionObj : string,
                 docID         : string,
