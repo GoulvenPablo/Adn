@@ -18,7 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AuthData } from '../providers/auth-data';
-import { AngularFireModule } from 'angularfire2';
+
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
+import { HttpClientModule } from '@angular/common/http';
+
 // We MUST import both the firebase AND firestore modules like so
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -22,7 +24,7 @@ export class DatabaseProvider {
 
 
 
-   constructor(public http: HttpClient)
+   constructor(public http: HttpClientModule)
    {
       // Initialise access to the firestore service
       this._DB = firebase.firestore();
