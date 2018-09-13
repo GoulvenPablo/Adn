@@ -26,18 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule } from 'angularfire2';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDqoQ1qZS-cbpj87kYbwQ57b5wjnG9e3U0",
-  authDomain: "adna-f6f14.firebaseapp.com",
-  databaseURL: "https://adna-f6f14.firebaseio.com",
-  projectId: "adna-f6f14",
-  storageBucket: "adna-f6f14.appspot.com",
-  messagingSenderId: "523623921315"
-  };
+
 
 @NgModule({
   declarations: [
@@ -59,7 +52,7 @@ const firebaseConfig = {
     HttpClientModule,
     HttpModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule
