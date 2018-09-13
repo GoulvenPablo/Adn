@@ -100,7 +100,7 @@ export class ManageDocumentPage {
     * @private
     * @description     property that stores the value for the database collection
     */
-   private _COLL 		: string 			= "Britain";
+   private _COLL 		: string 			= "Users";
 
 
    constructor(public navCtrl        : NavController,

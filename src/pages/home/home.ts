@@ -17,7 +17,7 @@ import { DatabaseProvider } from '../../providers/database/database';
 })
 export class HomePage {
 
- private _COLL 		: string 			= "Britain";
+ private _COLL 		: string 			= "Users";
 
 
 
@@ -40,12 +40,12 @@ export class HomePage {
        private _DB: DatabaseProvider,
         private _ALERT  : AlertController) {
           this._CONTENT = {
-                   city 			: "London",
-                   population 	: "8,787,892",
-                   established    : "C. 43 AD"
+                   nom 			: "Thomas",
+                   age 	: "22",
+                   emploi    : "Connard"
                 };
 
-          
+
 
   }
 

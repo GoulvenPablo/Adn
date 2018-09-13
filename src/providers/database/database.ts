@@ -80,9 +80,9 @@ export class DatabaseProvider {
             {
                 obj.push({
                    id             : doc.id,
-                   city           : doc.data().city,
-                   population     : doc.data().population,
-                   established    : doc.data().established
+                   nom           : doc.data().nom,
+                   age    : doc.data().age,
+                   emploi   : doc.data().emploi
                 });
             });
 
