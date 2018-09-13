@@ -39,7 +39,7 @@ export class ManageDocumentPage {
     * @public
     * @description     Model for city form field
     */
-   public city          : string          = '';
+   public nom          : string          = '';
 
 
 
@@ -49,7 +49,7 @@ export class ManageDocumentPage {
     * @public
     * @description     Model for population form field
     */
-   public population    : string          = '';
+   public age    : string          = '';
 
 
 
@@ -59,7 +59,7 @@ export class ManageDocumentPage {
     * @public
     * @description     Model for established form field
     */
-   public established 	: string          = '';
+   public emploi	: string          = '';
 
 
 
@@ -114,9 +114,9 @@ export class ManageDocumentPage {
       // that will be used to programmatically control the
       // form / form fields in the component template
       this.form 		= _FB.group({
-         'city' 		        : ['', Validators.required],
-         'population' 	        : ['', Validators.required],
-         'established'	        : ['', Validators.required]
+         'nom' 		        : ['', Validators.required],
+         'age' 	        : ['', Validators.required],
+         'emploi'	        : ['', Validators.required]
       });
 
 
@@ -127,9 +127,9 @@ export class ManageDocumentPage {
       {
           let record 		        = params.get('record');
 
-          this.city	            = record.location.city;
-          this.population   	  = record.location.population;
-          this.established      = record.location.established;
+          this.nom	            = record.location.nom;
+          this.age   	  = record.location.age;
+          this.emploi      = record.location.emploi;
           this.docID            = record.location.id;
           this.isEditable       = true;
           this.title            = 'Update this document';
@@ -149,9 +149,9 @@ export class ManageDocumentPage {
     */
    saveDocument(val : any) : void
    {
-      let city	            : string		= this.form.controls["city"].value,
-	 	      population        : string 		= this.form.controls["population"].value,
-  		    established       : string		= this.form.controls["established"].value;
+      let nom	            : string		= this.form.controls["nom"].value,
+	 	      age        : string 		= this.form.controls["age"].value,
+  		    emploi       : string		= this.form.controls["emploi"].value;
 
 
       // If we are editing an existing record then handle this scenario
@@ -163,14 +163,14 @@ export class ManageDocumentPage {
          this._DB.updateDocument(this._COLL,
                                this.docID,
                                {
-	                               city    		 : city,
-	                               population    : population,
-	                               established   : established
+	                               nom    		 : nom,
+	                               age   : age,
+	                               emloi   : emploi
 	                           })
          .then((data) =>
          {
             this.clearForm();
-            this.displayAlert('Success', 'The document ' +  city + ' was successfully updated');
+            this.displayAlert('Success', 'The document ' +  nom + ' was successfully updated');
          })
          .catch((error) =>
          {
@@ -186,14 +186,14 @@ export class ManageDocumentPage {
          // with the addDocument method
          this._DB.addDocument(this._COLL,
                             {
-	                           city    		 : city,
-	                           population    : population,
-	                           established   : established
+                              nom    		 : nom,
+                              age   : age,
+                              emloi   : emploi
 	                        })
          .then((data) =>
          {
             this.clearForm();
-            this.displayAlert('Record added', 'The document ' +  city + ' was successfully added');
+            this.displayAlert('Record added', 'The document ' +  nom + ' was successfully added');
          })
          .catch((error) =>
          {
@@ -235,9 +235,9 @@ export class ManageDocumentPage {
     */
    clearForm() : void
    {
-      this.city  					= '';
-      this.population				= '';
-      this.established 				= '';
+      this.nom  					= '';
+      this.age				= '';
+      this.emploi				= '';
    }
 
 

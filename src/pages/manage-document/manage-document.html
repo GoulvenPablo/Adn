@@ -1,7 +1,7 @@
 <ion-header>
    <ion-navbar>
       <ion-title>
-         {{ title }}
+         Information personnelle
       </ion-title>
    </ion-navbar>
 </ion-header>
@@ -14,29 +14,29 @@
       (ngSubmit)="saveDocument(form.value)">
 
    	  <ion-item>
-         <ion-label stacked>City:</ion-label>
+         <ion-label stacked>Nom:</ion-label>
          <ion-input
             type="text"
-            formControlName="city"
-            [(ngModel)]="city"></ion-input>
+            formControlName="nom"
+            [(ngModel)]="nom"></ion-input>
    	  </ion-item>
 
 
       <ion-item>
-         <ion-label stacked>Population:</ion-label>
+         <ion-label stacked>Age:</ion-label>
          <ion-input
             type="text"
-            formControlName="population"
-            [(ngModel)]="population"></ion-input>
+            formControlName="age"
+            [(ngModel)]="age"></ion-input>
    	  </ion-item>
 
 
       <ion-item>
-         <ion-label stacked>Established:</ion-label>
+         <ion-label stacked>Emploi:</ion-label>
          <ion-input
             type="text"
-            formControlName="established"
-            [(ngModel)]="established"></ion-input>
+            formControlName="emploi"
+            [(ngModel)]="emploi"></ion-input>
    	  </ion-item>
 
 
@@ -50,7 +50,7 @@
            padding-bottom
            [disabled]="!form.valid">
             <div *ngIf="!isEditable">
-               Add a new document
+               Entrer ses informations
             </div>
 
             <div *ngIf="isEditable">

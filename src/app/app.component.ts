@@ -7,6 +7,7 @@ import { AuthData } from '../providers/auth-data';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
+import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 
 import firebase from 'firebase';
 
@@ -56,7 +57,8 @@ export class MyApp {
               console.log("login");
               this.rootPage = HomePage;
 
-
+              if (user.displayName == null){
+                this.rootPage = ManageDocumentPage;
                 user.providerData.forEach(function (profile) {
                   console.log("Sign-in provider: " + profile.providerId);
                   console.log("  Provider-specific UID: " + profile.uid);
@@ -64,6 +66,9 @@ export class MyApp {
                   console.log("  Email: " + profile.email);
                   console.log("  Photo URL: " + profile.photoURL);
                 });
+
+              }
+
 
 
 
