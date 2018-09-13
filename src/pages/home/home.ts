@@ -3,7 +3,7 @@ import { NavController ,PopoverController, AlertController} from 'ionic-angular'
 import { AuthData } from '../../providers/auth-data';
 import { Login } from '../login/login';
 import {NotificationsPage} from "../notifications/notifications";
-
+import {ManageDocumentPage} from "../manage-document/manage-document";
 
 import {MenuController } from 'ionic-angular';
 
@@ -157,7 +157,7 @@ export class HomePage {
     */
    addDocument() : void
    {
-      this.navCtrl.push('manage-document');
+      this.navCtrl.push(ManageDocumentPage);
    }
 
 

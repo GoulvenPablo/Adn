@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {NotificationsPage} from "../pages/notifications/notifications";
+import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 
 import { Login } from '../pages/login/login';
 
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
       ResetPassword,
       Signup,
       NotificationsPage,
+      ManageDocumentPage
 
   ],
   imports: [
@@ -57,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
       Login,
       ResetPassword,
       Signup,
-      NotificationsPage
+      NotificationsPage,
+      ManageDocumentPage
   ],
   providers: [
 
