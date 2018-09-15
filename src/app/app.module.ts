@@ -83,6 +83,7 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
     DatabaseProvider,
     ImagePicker,
     Crop,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })

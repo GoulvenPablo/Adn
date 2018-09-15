@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController ,PopoverController, AlertController} from 'ionic-angular';
+import { NavController ,PopoverController, AlertController, Platform , ModalController} from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { Login } from '../login/login';
 import {NotificationsPage} from "../notifications/notifications";
