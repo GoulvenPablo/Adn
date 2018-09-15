@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 
-import { profile } from './signup';
+import { ProfilePage } from './profile';
 
 @NgModule({
   declarations: [
-    profile,
+    ProfilePage,
   ],
 
   exports: [
-    profile
+    ProfilePage
   ]
 })
 export class ProfileModule {}

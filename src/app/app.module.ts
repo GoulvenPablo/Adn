@@ -11,6 +11,7 @@ import {NotificationsPage} from "../pages/notifications/notifications";
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 
 import { ProfilePage } from '../pages/profile/profile';
+import { ModalsPage} from '../pages/modals/modals';
 import { Login } from '../pages/login/login';
 
 import {ResetPassword}from '../pages/reset-password/reset-password';
@@ -49,7 +50,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       Signup,
       NotificationsPage,
       ManageDocumentPage,
-      ProfilePage
+      ProfilePage,
+      ModalsPage
 
   ],
   imports: [
@@ -75,7 +77,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       Signup,
       NotificationsPage,
       ManageDocumentPage,
-      ProfilePage
+      ProfilePage,
+      ModalsPage
   ],
   providers: [
 
