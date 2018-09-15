@@ -53,7 +53,7 @@ export class ProfilePage {
    editMovie(movie)
    {
       let params = { movie: movie, isEdited: true },
-          modal  = this.modalCtrl.create('Modals', params);
+          modal  = this.modalCtrl.create(ModalsPage, params);
 
       modal.onDidDismiss((data) =>
       {

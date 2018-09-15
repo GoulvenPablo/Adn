@@ -1,5 +1,5 @@
 
-import { IonicPage, NavParams, NavController,
+import { IonicPage,  NavController,
     LoadingController,
     AlertController } from 'ionic-angular';
 
