@@ -1,5 +1,6 @@
 
 
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angular';
@@ -18,14 +19,12 @@ export class ModalsPage {
    public form             : any;
    public filmImage  	   : any;
    public movies           : any;
-   public movieName        : any     = '';
+
    public movieImage       : any     = '';
    public movieGenres      : any     = [];
-   public movieDuration    : any     = '';
+
    public movieSummary     : any     = '';
-   public movieActors      : any     = [];
-   public movieYear        : any     = '';
-   public movieRating      : any     = '';
+
    public movieId          : string  = '';
    public isEditable       : boolean = false;
 
@@ -42,13 +41,11 @@ export class ModalsPage {
    {
       this.form 		= _FB.group({
          'summary' 		: ['', Validators.minLength(10)],
-         'year' 		: ['', Validators.maxLength(4)],
-         'name' 		: ['', Validators.required],
-         'duration'		: ['', Validators.required],
-         'image'		: ['', Validators.required],
-         'rating'		: ['', Validators.required],
-         'genres' 		: ['', Validators.required],
-         'actors' 		: ['', Validators.required]
+
+         'image'		: [''],
+
+         'genres' 		: ['', Validators.required]
+
       });
 
       this.movies = firebase.database().ref('films/');
@@ -59,11 +56,9 @@ export class ModalsPage {
           let movie 		    = params.get('movie'),
               k;
 
-          this.movieName	    = movie.title;
-          this.movieDuration	= movie.duration;
+
           this.movieSummary   	= movie.summary;
-          this.movieRating   	= movie.rating;
-          this.movieYear    	= movie.year;
+
           this.movieImage       = movie.image;
           this.filmImage        = movie.image;
           this.movieId          = movie.id;
@@ -75,10 +70,6 @@ export class ModalsPage {
           }
 
 
-          for(k in movie.actors)
-          {
-             this.movieActors.push(movie.actors[k].name);
-          }
 
           this.isEditable      = true;
       }
@@ -91,13 +82,10 @@ export class ModalsPage {
    {
       this._LOADER.displayPreloader();
 
-      let title	    : string		= this.form.controls["name"].value,
-	 	  summary 	: string 		= this.form.controls["summary"].value,
-  		  rating  	: number		= this.form.controls["rating"].value,
+      let summary 	: string 		= this.form.controls["summary"].value,
+
   		  genres  	: any		    = this.form.controls["genres"].value,
-  		  actors  	: any		    = this.form.controls["actors"].value,
-  		  duration 	: string		= this.form.controls["duration"].value,
-  		  year    	: string		= this.form.controls["year"].value,
+
   		  image     : string        = this.filmImage,
   		  types     : any           = [],
   		  people    : any           = [],
@@ -112,12 +100,7 @@ export class ModalsPage {
       }
 
 
-      for(k in actors)
-      {
-         people.push({
-            "name" : actors[k]
-         });
-      }
+
 
 
       if(this.isEditable)
@@ -132,14 +115,13 @@ export class ModalsPage {
 
                this._DB.updateDatabase(this.movieId,
                {
-	              title    : title,
+
 	              summary  : summary,
-	              rating   : rating,
-	              duration : duration,
+
+
 	              image    : uploadedImage,
-	              genres   : types,
-	              actors   : people,
-	              year     : year
+	              genres   : types
+
 	           })
                .then((data) =>
                {
@@ -153,13 +135,12 @@ export class ModalsPage {
 
            this._DB.updateDatabase(this.movieId,
            {
-	          title    : title,
+
 	          summary  : summary,
-	          rating   : rating,
-	          duration : duration,
-	          genres   : types,
-	          actors   : people,
-	          year     : year
+
+
+	          genres   : types
+
 	       })
            .then((data) =>
            {
@@ -168,7 +149,7 @@ export class ModalsPage {
 	     }
 
       }
-      else
+      else if (image !=null)
       {
          this._DB.uploadImage(image)
          .then((snapshot : any) =>
@@ -176,20 +157,37 @@ export class ModalsPage {
             let uploadedImage : any = snapshot.downloadURL;
 
             this._DB.addToDatabase({
-	           title    : title,
+
 	           image    : uploadedImage,
 	           summary  : summary,
-	           rating   : rating,
-	           duration : duration,
-	           genres   : types,
-	           actors   : people,
-	           year     : year
+
+	           genres   : types
+
 	        })
             .then((data) =>
             {
                this._LOADER.hidePreloader();
             });
          });
+
+      }
+      else if(image == null)
+      {
+
+
+        this._DB.addToDatabase({
+
+
+        summary  : summary,
+
+        genres   : types
+
+         })
+            .then((data) =>
+            {
+               this._LOADER.hidePreloader();
+            });
+
 
       }
       this.closeModal(true);

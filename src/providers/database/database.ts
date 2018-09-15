@@ -31,7 +31,6 @@ export class DatabaseProvider {
     * Note the use of merge : true flag within the returned promise  - this
     * is needed to ensure that the collection is not repeatedly recreated should
     * this method be called again (we DON'T want to overwrite our documents!)
-
     */
    createAndPopulateDocument(collectionObj : string,
                              docID         : string,
@@ -59,7 +58,6 @@ export class DatabaseProvider {
    /**
     * Return documents from specific database collection
     *
-
     */
    getDocuments(collectionObj : string) : Promise<any>
    {
@@ -105,7 +103,6 @@ export class DatabaseProvider {
    /**
     * Add a new document to a selected database collection
     *
-
     */
    addDocument(collectionObj : string,
              dataObj       : any) : Promise<any>
@@ -130,7 +127,6 @@ export class DatabaseProvider {
     * Delete an existing document from a selected database collection
     *
     * @public
-
     */
    deleteDocument(collectionObj : string,
                 docID         : string) : Promise<any>
@@ -157,7 +153,6 @@ export class DatabaseProvider {
    /**
     * Update an existing document within a selected database collection
     *
-
     */
    updateDocument(collectionObj : string,
                 docID         : string,
@@ -197,14 +192,11 @@ export class DatabaseProvider {
               console.log(item.title);
                films.push({
 	              id        : item.key,
-	              actors    : item.val().actors,
-	              date      : item.val().date,
-	              duration  : item.val().duration,
-	              genres    : item.val().genres,
+
 	              image     : item.val().image,
-	              rating    : item.val().rating,
+
 	              summary   : item.val().summary,
-	              title     : item.val().title
+
 	           });
             });
 
