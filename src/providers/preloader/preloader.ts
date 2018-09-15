@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PreloaderProvider {
 
-   private loading : any;
+   public loading : any;
 
    constructor( public http        : Http,
                 public loadingCtrl : LoadingController)

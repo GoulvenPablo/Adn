@@ -18,7 +18,7 @@ export class DatabaseProvider {
 
 
 
-   constructor(public http: HttpClientModule)
+   constructor(public http: Http)
    {
       // Initialise access to the firestore service
       this._DB = firebase.firestore();
@@ -188,11 +188,13 @@ export class DatabaseProvider {
 
       return new Observable(observer =>
       {
+        
          let films : any = [];
          firebase.database().ref('films').orderByKey().once('value', (items : any) =>
          {
             items.forEach((item) =>
             {
+              console.log(item.title);
                films.push({
 	              id        : item.key,
 	              actors    : item.val().actors,
