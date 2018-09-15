@@ -29,7 +29,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ImagePicker } from '@ionic-native/image-picker';
 
 import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
+import { ImageProvider } from '../providers/image/image';
+import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
 @NgModule({
@@ -73,12 +76,14 @@ import { Crop } from '@ionic-native/crop';
   providers: [
 
       AuthData,
+    ImageProvider,
+    PreloaderProvider,
     StatusBar,
     SplashScreen,
     DatabaseProvider,
     ImagePicker,
     Crop,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })
 export class AppModule {}

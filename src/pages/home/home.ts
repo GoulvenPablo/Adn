@@ -12,7 +12,6 @@ import * as firebase from 'firebase';
 import { DatabaseProvider } from '../../providers/database/database';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
-import { normalizeURL } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -275,7 +274,7 @@ openImagePicker(){
     //to do method
   }
 
-  
+
 
   openImagePickerCrop(){
   this.imagePicker.hasReadPermission().then(
