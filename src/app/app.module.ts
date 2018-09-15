@@ -26,10 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-
+import { ImagePicker } from '@ionic-native/image-picker';
 
 import { HttpClientModule } from '@angular/common/http';
-
+import { Crop } from '@ionic-native/crop';
 
 
 @NgModule({
@@ -76,6 +76,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     DatabaseProvider,
+    ImagePicker,
+    Crop,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
