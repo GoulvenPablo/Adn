@@ -9,6 +9,9 @@ import { PreloaderProvider } from '../../providers/preloader/preloader';
 import { DatabaseProvider } from '../../providers/database/database';
 import * as firebase from 'firebase';
 
+import { ProfilePage } from '../profile/profile';
+import { HomePage } from '../home/home';
+
 @IonicPage()
 @Component({
   selector: 'page-modals',
@@ -166,6 +169,7 @@ export class ModalsPage {
 	        })
             .then((data) =>
             {
+              this.navCtrl.setRoot(HomePage);
               // this._LOADER.hidePreloader();
             });
          });
@@ -185,6 +189,7 @@ export class ModalsPage {
          })
             .then((data) =>
             {
+              this.navCtrl.setRoot(HomePage);
             //   this._LOADER.hidePreloader();
             });
 
