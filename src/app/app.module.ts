@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 
+import { ProfilePage } from '../pages/profile/profile';
 import { Login } from '../pages/login/login';
 
 import {ResetPassword}from '../pages/reset-password/reset-password';
@@ -35,6 +36,7 @@ import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +48,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ResetPassword,
       Signup,
       NotificationsPage,
-      ManageDocumentPage
+      ManageDocumentPage,
+      ProfilePage
 
   ],
   imports: [
@@ -71,7 +74,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ResetPassword,
       Signup,
       NotificationsPage,
-      ManageDocumentPage
+      ManageDocumentPage,
+      ProfilePage
   ],
   providers: [
 

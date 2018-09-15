@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
+import { ProfilePage } from '../pages/profile/profile';
 
 import firebase from 'firebase';
 
@@ -33,7 +34,9 @@ export class MyApp {
       // Initialize Firebase
       this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Profile', component: HomePage, icon: 'profile'},
+      {title: 'Profile', component: ProfilePage, icon: 'profile'},
+
+
 
     ];
       var config = {
@@ -91,6 +94,8 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+    console.log(page.component);
+    console.log("ok")
   }
 
   logOut() {
