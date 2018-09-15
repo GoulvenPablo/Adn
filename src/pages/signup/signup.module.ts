@@ -6,7 +6,7 @@ import { Signup } from './signup';
   declarations: [
     Signup,
   ],
- 
+
   exports: [
     Signup
   ]
