@@ -40,13 +40,14 @@ export class ProfilePage {
   loadAndParseMovies()
    {
       this.movies = this._DB.renderMovies();
-      this._LOADER.hidePreloader();
+
    }
 
 
    addRecord()
    {
       let modal = this.navCtrl.push(ModalsPage)
+
 
    }
 

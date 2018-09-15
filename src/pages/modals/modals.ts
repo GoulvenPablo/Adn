@@ -80,7 +80,7 @@ export class ModalsPage {
 
    saveMovie(val)
    {
-      this._LOADER.displayPreloader();
+    //  this._LOADER.displayPreloader();
 
       let summary 	: string 		= this.form.controls["summary"].value,
 
@@ -88,7 +88,7 @@ export class ModalsPage {
 
   		  image     : string        = this.filmImage,
   		  types     : any           = [],
-  		  people    : any           = [],
+
   		  k         : any;
 
 
@@ -125,7 +125,7 @@ export class ModalsPage {
 	           })
                .then((data) =>
                {
-                  this._LOADER.hidePreloader();
+                //  this._LOADER.hidePreloader();
                });
 
             });
@@ -144,7 +144,7 @@ export class ModalsPage {
 	       })
            .then((data) =>
            {
-              this._LOADER.hidePreloader();
+            //  this._LOADER.hidePreloader();
            });
 	     }
 
@@ -166,7 +166,7 @@ export class ModalsPage {
 	        })
             .then((data) =>
             {
-               this._LOADER.hidePreloader();
+              // this._LOADER.hidePreloader();
             });
          });
 
@@ -185,7 +185,7 @@ export class ModalsPage {
          })
             .then((data) =>
             {
-               this._LOADER.hidePreloader();
+            //   this._LOADER.hidePreloader();
             });
 
 
