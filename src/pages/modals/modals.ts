@@ -47,11 +47,11 @@ export class ModalsPage {
 
          'image'		: [''],
 
-         'genres' 		: ['', Validators.required]
+         'jobtype' 		: ['', Validators.required]
 
       });
 
-      this.movies = firebase.database().ref('films/');
+      this.movies = firebase.database().ref('profile/');
 
 
       if(params.get('isEdited'))
@@ -60,16 +60,16 @@ export class ModalsPage {
               k;
 
 
-          this.movieSummary   	= movie.summary;
+          this.movieSummary   	= movie.description;
 
           this.movieImage       = movie.image;
           this.filmImage        = movie.image;
           this.movieId          = movie.id;
 
 
-          for(k in movie.genres)
+          for(k in movie.jobtype)
           {
-             this.movieGenres.push(movie.genres[k].name);
+             this.movieGenres.push(movie.jobtype[k].name);
           }
 
 
@@ -85,9 +85,9 @@ export class ModalsPage {
    {
     //  this._LOADER.displayPreloader();
 
-      let summary 	: string 		= this.form.controls["summary"].value,
+      let description 	: string 		= this.form.controls["summary"].value,
 
-  		  genres  	: any		    = this.form.controls["genres"].value,
+  		  jobtype  	: any		    = this.form.controls["jobtype"].value,
 
   		  image     : string        = this.filmImage,
   		  types     : any           = [],
@@ -95,10 +95,10 @@ export class ModalsPage {
   		  k         : any;
 
 
-      for(k in genres)
+      for(k in jobtype)
       {
          types.push({
-            "name" : genres[k]
+            "name" : jobtype[k]
          });
       }
 
@@ -119,11 +119,11 @@ export class ModalsPage {
                this._DB.updateDatabase(this.movieId,
                {
 
-	              summary  : summary,
+	              description  : description,
 
 
 	              image    : uploadedImage,
-	              genres   : types
+	              jobtype  : types
 
 	           })
                .then((data) =>
@@ -139,10 +139,10 @@ export class ModalsPage {
            this._DB.updateDatabase(this.movieId,
            {
 
-	          summary  : summary,
+	          description  : description,
 
 
-	          genres   : types
+	          jobtype   : types
 
 	       })
            .then((data) =>
@@ -162,9 +162,9 @@ export class ModalsPage {
             this._DB.addToDatabase({
 
 	           image    : uploadedImage,
-	           summary  : summary,
+	           description  : description,
 
-	           genres   : types
+	           jobtype   : types
 
 	        })
             .then((data) =>
@@ -182,9 +182,9 @@ export class ModalsPage {
         this._DB.addToDatabase({
 
 
-        summary  : summary,
+        description  : description,
 
-        genres   : types
+        jobtype   : types
 
          })
             .then((data) =>

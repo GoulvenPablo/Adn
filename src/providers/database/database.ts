@@ -185,17 +185,21 @@ export class DatabaseProvider {
       {
 
          let films : any = [];
-         firebase.database().ref('films').orderByKey().once('value', (items : any) =>
+         firebase.database().ref('profile').orderByKey().once('value', (items : any) =>
          {
             items.forEach((item) =>
             {
-              console.log(item.title);
+              console.log(item.val().description);
+              console.log(item.key);
+              console.log(item.val().jobtype)
                films.push({
 	              id        : item.key,
+                jobtype : item.val().jobtype,
+
 
 	              image     : item.val().image,
 
-	              summary   : item.val().summary,
+	              description   : item.val().description,
 
 	           });
             });
@@ -219,7 +223,7 @@ export class DatabaseProvider {
    {
       return new Promise((resolve) =>
       {
-         let ref = firebase.database().ref('films').child(id);
+         let ref = firebase.database().ref('profile').child(id);
          ref.remove();
          resolve(true);
       });
@@ -231,7 +235,7 @@ export class DatabaseProvider {
    {
       return new Promise((resolve) =>
       {
-         let addRef = firebase.database().ref('films');
+         let addRef = firebase.database().ref('profile');
          addRef.push(movieObj);
          resolve(true);
       });
@@ -243,7 +247,7 @@ export class DatabaseProvider {
    {
       return new Promise((resolve) =>
       {
-         var updateRef = firebase.database().ref('films').child(id);
+         var updateRef = firebase.database().ref('profile').child(id);
 	      updateRef.update(moviesObj);
          resolve(true);
       });
@@ -253,7 +257,7 @@ export class DatabaseProvider {
 
    uploadImage(imageString) : Promise<any>
    {
-      let image       : string  = 'movie-' + new Date().getTime() + '.jpg',
+      let image       : string  = 'profile-' + new Date().getTime() + '.jpg',
           storageRef  : any,
           parseUpload : any;
 
