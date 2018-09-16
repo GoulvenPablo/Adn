@@ -49,8 +49,8 @@
                type="hidden"
                name="image"
                formControlName="image"
-               [(ngModel)]="filmImage">
-            <img [src]="filmImage">
+               [(ngModel)]="newProfileImage">
+            <img [src]="newProfileImage">
    	  </ion-item>
 
 
@@ -63,7 +63,7 @@
          <ion-select
             formControlName="jobtype"
             multiple="true"
-            [(ngModel)]="movieGenres">
+            [(ngModel)]="JobType">
              <ion-option value="Action">Action</ion-option>
              <ion-option value="Comedy">Comedy</ion-option>
              <ion-option value="Documentary">Documentary</ion-option>
@@ -83,8 +83,8 @@
          <ion-label stacked>Summary:</ion-label>
          <ion-textarea
 			rows="6"
-            formControlName="summary"
-            [(ngModel)]="movieSummary"></ion-textarea>
+            formControlName="description"
+            [(ngModel)]="profileDescription"></ion-textarea>
    	  </ion-item>
 
 

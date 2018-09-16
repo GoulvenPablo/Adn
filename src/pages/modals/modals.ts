@@ -20,15 +20,15 @@ import { HomePage } from '../home/home';
 export class ModalsPage {
 
    public form             : any;
-   public filmImage  	   : any;
-   public movies           : any;
+   public newProfileImage  	   : any;
+   public profiles           : any;
 
-   public movieImage       : any     = '';
-   public movieGenres      : any     = [];
+   public profileImage        : any     = '';
+   public JobType      : any     = [];
 
-   public movieSummary     : any     = '';
+   public profileDescription     : any     = '';
 
-   public movieId          : string  = '';
+   public profileId          : string  = '';
    public isEditable       : boolean = false;
 
 
@@ -43,7 +43,7 @@ export class ModalsPage {
    )
    {
       this.form 		= _FB.group({
-         'summary' 		: ['', Validators.minLength(10)],
+         'description' 		: ['', Validators.minLength(10)],
 
          'image'		: [''],
 
@@ -51,25 +51,25 @@ export class ModalsPage {
 
       });
 
-      this.movies = firebase.database().ref('profile/');
+      this.profiles = firebase.database().ref('profile/');
 
 
       if(params.get('isEdited'))
       {
-          let movie 		    = params.get('profile'),
+          let profile		    = params.get('profile'),
               k;
 
 
-          this.movieSummary   	= movie.description;
+          this.profileDescription   	= profile.description;
 
-          this.movieImage       = movie.image;
-          this.filmImage        = movie.image;
-          this.movieId          = movie.id;
+          this.profileImage       = profile.image;
+          this.newProfileImage        = profile.image;
+          this.profileId          = profile.id;
 
 
-          for(k in movie.jobtype)
+          for(k in profile.jobtype)
           {
-             this.movieGenres.push(movie.jobtype[k].name);
+             this.JobType.push(profile.jobtype[k].name);
           }
 
 
@@ -85,11 +85,11 @@ export class ModalsPage {
    {
     //  this._LOADER.displayPreloader();
 
-      let description 	: string 		= this.form.controls["summary"].value,
+      let description 	: string 		= this.form.controls["description"].value,
 
   		  jobtype  	: any		    = this.form.controls["jobtype"].value,
 
-  		  image     : string        = this.filmImage,
+  		  image     : string        = this.newProfileImage,
   		  types     : any           = [],
 
   		  k         : any;
@@ -109,14 +109,14 @@ export class ModalsPage {
       if(this.isEditable)
       {
 
-         if(image !== this.movieImage)
+         if(image !== this.profileImage)
          {
             this._DB.uploadImage(image)
             .then((snapshot : any) =>
             {
                let uploadedImage : any = snapshot.downloadURL;
 
-               this._DB.updateDatabase(this.movieId,
+               this._DB.updateDatabase(this.profileId,
                {
 
 	              description  : description,
@@ -136,7 +136,7 @@ export class ModalsPage {
          else
          {
 
-           this._DB.updateDatabase(this.movieId,
+           this._DB.updateDatabase(this.profileId,
            {
 
 	          description  : description,
@@ -212,7 +212,7 @@ export class ModalsPage {
       this._IMG.selectImage()
       .then((data) =>
       {
-         this.filmImage = data;
+         this.newProfileImage = data;
       });
    }
 
