@@ -21,12 +21,13 @@
 <ion-content padding class="animated fadeIn common-bg">
 
 
-  <ion-card no-margin margin-bottom class="full-width">
 
-    <ion-item>
-
-    </ion-item>
-  </ion-card>
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
 
   <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="search()">
     <ion-icon name="search"></ion-icon> search

@@ -59,6 +59,9 @@ export class MyApp {
           } else {
               console.log("login");
               this.rootPage = HomePage;
+              var myUserId = firebase.auth().currentUser.uid;
+              console.log(myUserId);
+
 
             //  if (user.displayName == null){
             //    this.rootPage = ManageDocumentPage;

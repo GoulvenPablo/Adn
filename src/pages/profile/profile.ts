@@ -51,7 +51,7 @@ export class ProfilePage {
 
    }
 
-   editMovie(profile)
+   editProfile(profile)
    {
       let params = { profile: profile, isEdited: true },
           modal  = this.modalCtrl.create(ModalsPage, params);

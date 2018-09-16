@@ -7,10 +7,12 @@ import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angul
 import { ImageProvider } from '../../providers/image/image';
 import { PreloaderProvider } from '../../providers/preloader/preloader';
 import { DatabaseProvider } from '../../providers/database/database';
-import * as firebase from 'firebase';
+
 
 import { ProfilePage } from '../profile/profile';
 import { HomePage } from '../home/home';
+import firebase from 'firebase';
+
 
 @IonicPage()
 @Component({
@@ -103,7 +105,8 @@ export class ModalsPage {
       }
 
 
-
+      var myUserId = firebase.auth().currentUser.uid;
+      console.log(myUserId);
 
 
       if(this.isEditable)
@@ -120,6 +123,7 @@ export class ModalsPage {
                {
 
 	              description  : description,
+                userId : myUserId,
 
 
 	              image    : uploadedImage,
@@ -140,6 +144,7 @@ export class ModalsPage {
            {
 
 	          description  : description,
+
 
 
 	          jobtype   : types
@@ -164,6 +169,7 @@ export class ModalsPage {
 	           image    : uploadedImage,
 	           description  : description,
 
+
 	           jobtype   : types
 
 	        })
@@ -183,6 +189,7 @@ export class ModalsPage {
 
 
         description  : description,
+        userId : myUserId,
 
         jobtype   : types
 
