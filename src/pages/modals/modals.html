@@ -25,11 +25,11 @@
 
    	  <ion-item-divider color="light">
          <div *ngIf="!isEditable">
-            Add a new movie
+            Ajouter profil
          </div>
 
          <div *ngIf="isEditable">
-            Amend this movie
+            Paramétres profil
          </div>
    	  </ion-item-divider>
 
@@ -59,7 +59,7 @@
 
 
    	  <ion-item>
-         <ion-label stacked>Genre:</ion-label>
+         <ion-label stacked>Categorie:</ion-label>
          <ion-select
             formControlName="jobtype"
             multiple="true"
@@ -80,7 +80,7 @@
 
 
    	  <ion-item>
-         <ion-label stacked>Summary:</ion-label>
+         <ion-label stacked>Description:</ion-label>
          <ion-textarea
 			rows="6"
             formControlName="description"
@@ -105,11 +105,11 @@
            padding-bottom
            [disabled]="!form.valid">
             <div *ngIf="!isEditable">
-               Add a new movie
+               Ajouter nouveau profil
             </div>
 
             <div *ngIf="isEditable">
-               Update this movie
+               Mettre a jour le profil
             </div>
             </button>
    	  </ion-item>
