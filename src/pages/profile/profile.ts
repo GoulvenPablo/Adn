@@ -34,12 +34,12 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-    this.loadAndParseMovies()
+    this.loadAndParseProfiles()
   }
 
-  loadAndParseMovies()
+  loadAndParseProfiles()
    {
-      this.profiles = this._DB.renderMovies();
+      this.profiles = this._DB.renderProfiles();
 
    }
 
@@ -60,7 +60,7 @@ export class ProfilePage {
       {
          if(data)
          {
-            this.loadAndParseMovies();
+            this.loadAndParseProfiles();
          }
       });
       modal.present();
@@ -68,12 +68,12 @@ export class ProfilePage {
 
 
 
-   deleteMovie(profile)
+   deleteProfile(profile)
    {
-      this._DB.deleteMovie(profile.id)
+      this._DB.deleteProfile(profile.id)
       .then((data) =>
       {
-         this.loadAndParseMovies();
+         this.loadAndParseProfiles();
       });
    }
 

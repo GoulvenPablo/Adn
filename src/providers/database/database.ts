@@ -178,7 +178,7 @@ export class DatabaseProvider {
 
 
 
-   renderMovies() : Observable<any>
+   renderProfiles() : Observable<any>
    {
 
       return new Observable(observer =>
@@ -219,7 +219,7 @@ export class DatabaseProvider {
 
 
 
-   deleteMovie(id) : Promise<any>
+   deleteProfile(id) : Promise<any>
    {
       return new Promise((resolve) =>
       {
