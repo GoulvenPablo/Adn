@@ -184,7 +184,7 @@ export class DatabaseProvider {
       return new Observable(observer =>
       {
 
-         let films : any = [];
+         let profiles : any = [];
          firebase.database().ref('profile').orderByKey().once('value', (items : any) =>
          {
             items.forEach((item) =>
@@ -192,7 +192,7 @@ export class DatabaseProvider {
               console.log(item.val().description);
               console.log(item.key);
               console.log(item.val().jobtype)
-               films.push({
+               profiles.push({
 	              id        : item.key,
                 jobtype : item.val().jobtype,
 
@@ -204,7 +204,7 @@ export class DatabaseProvider {
 	           });
             });
 
-            observer.next(films);
+            observer.next(profiles);
             observer.complete();
          },
          (error) =>
@@ -231,24 +231,24 @@ export class DatabaseProvider {
 
 
 
-   addToDatabase(movieObj) : Promise<any>
+   addToDatabase(profileObj) : Promise<any>
    {
       return new Promise((resolve) =>
       {
          let addRef = firebase.database().ref('profile');
-         addRef.push(movieObj);
+         addRef.push(profileObj);
          resolve(true);
       });
    }
 
 
 
-   updateDatabase(id, moviesObj) : Promise<any>
+   updateDatabase(id, profilesObj) : Promise<any>
    {
       return new Promise((resolve) =>
       {
          var updateRef = firebase.database().ref('profile').child(id);
-	      updateRef.update(moviesObj);
+	      updateRef.update(profilesObj);
          resolve(true);
       });
    }

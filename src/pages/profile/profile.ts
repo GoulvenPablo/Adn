@@ -23,7 +23,7 @@ import 'rxjs/Rx';
 export class ProfilePage {
 
 
-  public movies    : any;
+  public profiles    : any;
   constructor(public navCtrl       : NavController,
                 private platform     : Platform,
                 private modalCtrl    : ModalController,
@@ -39,7 +39,7 @@ export class ProfilePage {
 
   loadAndParseMovies()
    {
-      this.movies = this._DB.renderMovies();
+      this.profiles = this._DB.renderMovies();
 
    }
 
@@ -51,9 +51,9 @@ export class ProfilePage {
 
    }
 
-   editMovie(movie)
+   editMovie(profile)
    {
-      let params = { movie: movie, isEdited: true },
+      let params = { profile: profile, isEdited: true },
           modal  = this.modalCtrl.create(ModalsPage, params);
 
       modal.onDidDismiss((data) =>
@@ -68,9 +68,9 @@ export class ProfilePage {
 
 
 
-   deleteMovie(movie)
+   deleteMovie(profile)
    {
-      this._DB.deleteMovie(movie.id)
+      this._DB.deleteMovie(profile.id)
       .then((data) =>
       {
          this.loadAndParseMovies();

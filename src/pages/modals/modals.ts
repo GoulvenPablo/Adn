@@ -56,7 +56,7 @@ export class ModalsPage {
 
       if(params.get('isEdited'))
       {
-          let movie 		    = params.get('movie'),
+          let movie 		    = params.get('profile'),
               k;
 
 

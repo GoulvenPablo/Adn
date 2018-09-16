@@ -20,7 +20,7 @@
       <ion-card
          class="movie"
          text-wrap
-         *ngFor="let movie of movies | async">
+         *ngFor="let movie of profiles | async">
          <ion-item>
             <div *ngIf="movie.image">
                <img [src]="movie.image">
@@ -34,7 +34,7 @@
             <section class="multiples">
                <h3>Genres</h3>
                <ion-chip
-                  *ngFor="let genre of movie.genres"
+                  *ngFor="let jobtype of movie.jobtype"
                   padding-left
                   padding-right
                   margin-right>{{ jobtype.name }}</ion-chip>
