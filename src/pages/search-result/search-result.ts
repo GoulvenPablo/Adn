@@ -14,11 +14,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchResultPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public params: NavParams
+  ) {
+
+
+    if(params.get('isEdited'))
+    {
+        console.log("parameter passed")
+        let searchresult = params.get('searchvalue')
+        console.log(searchresult);
+    }
+
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchResultPage');
   }
+
+
 
 }

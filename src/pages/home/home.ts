@@ -44,7 +44,8 @@ export class HomePage {
         public popoverCtrl: PopoverController,
          public menuctrl: MenuController,
        private _DB: DatabaseProvider,
-        private _ALERT  : AlertController) {
+        private _ALERT  : AlertController,
+      private modalCtrl: ModalController) {
           this._CONTENT = {
                    nom 			: "Thomas",
                    age 	: "22",
@@ -252,7 +253,17 @@ export class HomePage {
    search(){
 
      console.log(this.searchvalue);
-     this.navCtrl.push(SearchResultPage);
+     let params = { searchvalue: this.searchvalue, isEdited: true },
+         modal  = this.modalCtrl.create(SearchResultPage, params);
+
+     modal.onDidDismiss((data) =>
+     {
+        if(data)
+        {
+          // this.loadAndParseProfiles();
+        }
+     });
+     modal.present();
 
 
 
