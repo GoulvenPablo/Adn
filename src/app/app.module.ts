@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
+import {SearchResultPage}from '../pages/search-result/search-result';
 
 import { ProfilePage } from '../pages/profile/profile';
 import { ModalsPage} from '../pages/modals/modals';
@@ -38,6 +39,7 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -51,7 +53,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       NotificationsPage,
       ManageDocumentPage,
       ProfilePage,
-      ModalsPage
+      ModalsPage,
+      SearchResultPage
 
   ],
   imports: [
@@ -78,7 +81,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       NotificationsPage,
       ManageDocumentPage,
       ProfilePage,
-      ModalsPage
+      ModalsPage,
+      SearchResultPage
   ],
   providers: [
 

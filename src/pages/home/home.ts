@@ -4,6 +4,7 @@ import { AuthData } from '../../providers/auth-data';
 import { Login } from '../login/login';
 import {NotificationsPage} from "../notifications/notifications";
 import {ManageDocumentPage} from "../manage-document/manage-document";
+import {SearchResultPage}from '../search-result/search-result';
 
 import {MenuController } from 'ionic-angular';
 import { AngularFireObject, AngularFireList } from 'angularfire2/database';
@@ -21,6 +22,9 @@ export class HomePage {
 
  private _COLL 		: string 			= "Users";
 
+ searchQuery: string = '';
+ items: string[];
+ searchvalue: string = '';
 
 
 
@@ -48,8 +52,39 @@ export class HomePage {
                 };
 
 
+          this.initializeItems();
+
+
 
   }
+
+  initializeItems() {
+    this.items = [
+      'BTP',
+      'R&D'
+    ];
+  }
+
+
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+    console.log(this.items);
+    console.log(val);
+    this.searchvalue = val;
+    console.log(val.trim());
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+
+      })
+    }
+  }
+
 
   ionViewDidEnter()
    {
@@ -215,6 +250,9 @@ export class HomePage {
 
 
    search(){
+
+     console.log(this.searchvalue);
+     this.navCtrl.push(SearchResultPage);
 
 
 

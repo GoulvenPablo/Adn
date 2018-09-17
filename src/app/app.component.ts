@@ -34,7 +34,7 @@ export class MyApp {
       // Initialize Firebase
       this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Profile', component: ProfilePage, icon: 'profile'},
+      {title: 'Profile', component: ProfilePage, icon: 'profile'}
 
 
 
