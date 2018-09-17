@@ -224,34 +224,10 @@ export class DatabaseProvider {
       {
 
          let profiles : any = [];
-         firebase.database().ref('profile').orderByValue().once('value', (items : any) =>
-         {
-            items.forEach((item) =>
-            {
-              console.log(item.val().description);
-              console.log(item.key);
-              console.log(item.val().jobtype)
-               profiles.push({
-	              id        : item.key,
-                jobtype : item.val().jobtype,
+         firebase.database().ref('profile').orderByChild('userId').equalTo('0L7KR5zTNcNmY1AG5E4KSv956mi2').on("child_added", function(snapshot) {
+  console.log(snapshot.key);
+});
 
-
-	              image     : item.val().image,
-
-	              description   : item.val().description,
-
-	           });
-            });
-
-            observer.next(profiles);
-            observer.complete();
-         },
-         (error) =>
-         {
-            console.log("Observer error: ", error);
-            console.dir(error);
-            observer.error(error)
-         });
 
       });
    }

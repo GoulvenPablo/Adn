@@ -54,7 +54,7 @@ export class SearchResultPage {
 
   loadAndParseProfiles()
    {
-      this.profiles = this._DB.renderProfiles();
+      this.profiles = this._DB.searchProfiles();
 
    }
 
