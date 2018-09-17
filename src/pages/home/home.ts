@@ -3,7 +3,7 @@ import { NavController ,PopoverController, AlertController, Platform , ModalCont
 import { AuthData } from '../../providers/auth-data';
 import { Login } from '../login/login';
 import {NotificationsPage} from "../notifications/notifications";
-import {ManageDocumentPage} from "../manage-document/manage-document";
+
 import {SearchResultPage}from '../search-result/search-result';
 
 import {MenuController } from 'ionic-angular';

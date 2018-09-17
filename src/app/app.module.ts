@@ -11,7 +11,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {NotificationsPage} from "../pages/notifications/notifications";
-import {ManageDocumentPage} from "../pages/manage-document/manage-document";
+
 import {SearchResultPage}from '../pages/search-result/search-result';
 
 import { ProjectsPage} from '../pages/projects/projects';
@@ -56,7 +56,7 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ResetPassword,
       Signup,
       NotificationsPage,
-      ManageDocumentPage,
+
       ProfilePage,
       ModalsPage,
       SearchResultPage,
@@ -87,7 +87,7 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ResetPassword,
       Signup,
       NotificationsPage,
-      ManageDocumentPage,
+
       ProfilePage,
       ModalsPage,
       SearchResultPage,
