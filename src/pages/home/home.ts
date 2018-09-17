@@ -12,7 +12,7 @@ import { AngularFireObject, AngularFireList } from 'angularfire2/database';
 
 import { DatabaseProvider } from '../../providers/database/database';
 import { ImagePicker } from '@ionic-native/image-picker';
-import { Crop } from '@ionic-native/crop';
+
 
 @Component({
   selector: 'page-home',
@@ -236,17 +236,13 @@ export class HomePage {
    search(){
 
      console.log(this.searchvalue);
-     let params = { searchvalue: this.searchvalue, isEdited: true },
-         modal  = this.modalCtrl.create(SearchResultPage, params);
+     let params = { searchvalue: this.searchvalue, isEdited: true }
 
-     modal.onDidDismiss((data) =>
-     {
-        if(data)
-        {
-          // this.loadAndParseProfiles();
-        }
-     });
-     modal.present();
+
+
+     this.navCtrl.push(SearchResultPage,params)
+
+
 
 
 

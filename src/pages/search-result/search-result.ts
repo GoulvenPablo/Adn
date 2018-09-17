@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
+import { ModalsPage } from '../modals/modals';
+import {  Platform, ModalController } from 'ionic-angular';
+import { ImageProvider } from '../../providers/image/image';
+import { PreloaderProvider } from '../../providers/preloader/preloader';
+import { DatabaseProvider } from '../../providers/database/database';
+import * as firebase from 'firebase';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
 /**
  * Generated class for the SearchResultPage page.
  *
@@ -14,7 +23,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchResultPage {
 
-  constructor(public navCtrl: NavController, public params: NavParams
+  public profiles    : any;
+
+  constructor(public navCtrl: NavController,
+     public params: NavParams,
+
+                   private platform     : Platform,
+                   private modalCtrl    : ModalController,
+                   private _IMG         : ImageProvider,
+                   private _LOADER      : PreloaderProvider,
+                   private _DB          : DatabaseProvider
   ) {
 
 
@@ -30,7 +48,15 @@ export class SearchResultPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchResultPage');
+    this.loadAndParseProfiles();
   }
+
+
+  loadAndParseProfiles()
+   {
+      this.profiles = this._DB.renderProfiles();
+
+   }
 
 
 
