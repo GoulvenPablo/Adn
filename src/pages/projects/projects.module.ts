@@ -7,7 +7,7 @@ import { ProjectsPage } from './projects';
     ProjectsPage,
   ],
   imports: [
-    IonicModule.forChild(ProjectsPage),
+    ProjectsPage,
   ],
   exports: [
     ProjectsPage

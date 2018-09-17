@@ -52,13 +52,20 @@ export class DatabaseProvider {
               console.log(item.key);
               console.log(item.val().jobtype)
                profiles.push({
-	              id        : item.key,
-                jobtype : item.val().jobtype,
+                 id        : item.key,
+                 jobtype : item.val().jobtype,
+                 birthdate : item.val().birthdate,
+                 phonenumber : item.val().phonenumber,
+                 familyname : item.val().familyname,
+                 association : item.val().association,
+                 name : item.val().name,
 
 
-	              image     : item.val().image,
 
-	              description   : item.val().description,
+
+                 image     : item.val().image,
+
+                 description   : item.val().description,
 
 	           });
             });
@@ -92,13 +99,20 @@ export class DatabaseProvider {
              console.log(item.key);
              console.log(item.val().jobtype)
               profiles.push({
-               id        : item.key,
-               jobtype : item.val().jobtype,
+                id        : item.key,
+                jobtype : item.val().jobtype,
+                birthdate : item.val().birthdate,
+                phonenumber : item.val().phonenumber,
+                familyname : item.val().familyname,
+                association : item.val().association,
+                name : item.val().name,
 
 
-               image     : item.val().image,
 
-               description   : item.val().description,
+
+                image     : item.val().image,
+
+                description   : item.val().description,
 
 
            });
@@ -127,6 +141,13 @@ export class DatabaseProvider {
               profiles.push({
                id        : item.key,
                jobtype : item.val().jobtype,
+               birthdate : item.val().birthdate,
+               phonenumber : item.val().phonenumber,
+               familyname : item.val().familyname,
+               association : item.val().association,
+               name : item.val().name,
+
+
 
 
                image     : item.val().image,

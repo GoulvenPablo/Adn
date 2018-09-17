@@ -29,8 +29,14 @@ export class ModalsPage {
    public JobType      : any     = [];
 
    public profileDescription     : any     = '';
+   public Birthdate : any = '';
+   public phoneNumber : any = '';
+   public Association : any = '';
+   public Password : any = '';
 
    public profileId          : string  = '';
+   public Name          : string  = '';
+   public familyName          : string  = '';
    public isEditable       : boolean = false;
 
 
@@ -49,7 +55,17 @@ export class ModalsPage {
 
          'image'		: [''],
 
-         'jobtype' 		: ['', Validators.required]
+         'jobtype' 		: ['', Validators.required],
+
+         'name' 		: ['', Validators.required],
+         'familyname' 		: ['', Validators.required],
+         'association' 		: ['', Validators.required],
+         //'passworld' 		: ['', Validators.required],
+         'birthdate' 		: ['', Validators.required],
+
+         'phonenumber' 		: ['', Validators.required]
+
+
 
       });
 
@@ -61,9 +77,14 @@ export class ModalsPage {
           let profile		    = params.get('profile'),
               k;
 
-
+          //this.Name = profile.name;
+          //this.familyName = profile.familyname;
           this.profileDescription   	= profile.description;
-
+          this.Association = profile.association;
+          this.Birthdate = profile.birthdate;
+          this.phoneNumber = profile.phonenumber;
+          this.Name = profile.name;
+          this.familyName = profile.familyname;
           this.profileImage       = profile.image;
           this.newProfileImage        = profile.image;
           this.profileId          = profile.id;
@@ -90,6 +111,12 @@ export class ModalsPage {
       let description 	: string 		= this.form.controls["description"].value,
 
   		  jobtype  	: any		    = this.form.controls["jobtype"].value,
+        name  	: any		    = this.form.controls["name"].value,
+        familyname  	: any		    = this.form.controls["familyname"].value,
+      //  password 	: any		    = this.form.controls["password"].value,
+        birthdate 	: any		    = this.form.controls["birthdate"].value,
+        phonenumber 	: any		    = this.form.controls["phonenumber"].value,
+        association 	: any		    = this.form.controls["association"].value,
 
   		  image     : string        = this.newProfileImage,
   		  types     : any           = [],
@@ -124,6 +151,11 @@ export class ModalsPage {
 
 	              description  : description,
                 userId : myUserId,
+                phonenumber : phonenumber,
+                name : name,
+                familyname : familyname,
+                association : association,
+                birthdate : birthdate,
 
 
 	              image    : uploadedImage,
@@ -144,6 +176,11 @@ export class ModalsPage {
            {
 
 	          description  : description,
+            phonenumber : phonenumber,
+            name : name,
+            familyname : familyname,
+            association : association,
+            birthdate : birthdate,
 
 
 
@@ -168,6 +205,11 @@ export class ModalsPage {
 
 	           image    : uploadedImage,
 	           description  : description,
+             phonenumber : phonenumber,
+             name : name,
+             familyname : familyname,
+             association : association,
+             birthdate : birthdate,
 
 
 	           jobtype   : types
@@ -190,6 +232,11 @@ export class ModalsPage {
 
         description  : description,
         userId : myUserId,
+        phonenumber : phonenumber,
+        name : name,
+        familyname : familyname,
+        association : association,
+        birthdate : birthdate,
 
         jobtype   : types
 
