@@ -14,6 +14,8 @@ import {NotificationsPage} from "../pages/notifications/notifications";
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 import {SearchResultPage}from '../pages/search-result/search-result';
 
+import { ProjectsPage} from '../pages/projects/projects';
+import { OffersPage } from '../pages/offers/offers';
 import { ProfilePage } from '../pages/profile/profile';
 import { ModalsPage} from '../pages/modals/modals';
 import { Login } from '../pages/login/login';
@@ -57,7 +59,9 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ManageDocumentPage,
       ProfilePage,
       ModalsPage,
-      SearchResultPage
+      SearchResultPage,
+      OffersPage,
+      ProjectsPage
 
   ],
   imports: [
@@ -86,7 +90,9 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ManageDocumentPage,
       ProfilePage,
       ModalsPage,
-      SearchResultPage
+      SearchResultPage,
+      OffersPage,
+      ProjectsPage
   ],
   providers: [
 

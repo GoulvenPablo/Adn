@@ -86,7 +86,7 @@ export class DatabaseProvider {
       {
 
          let profiles : any = [];
-         firebase.database().ref('profile').orderByChild('jobtype/name').equalTo('R&D').on("child_added", function(item) {
+         firebase.database().ref('profile').orderByChild('jobtype').equalTo('R&D').on("child_added", function(item) {
 
              console.log(item.val().description);
              console.log(item.key);
