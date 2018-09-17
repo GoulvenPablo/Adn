@@ -23,7 +23,10 @@ import 'rxjs/Rx';
 })
 export class SearchResultPage {
 
+
+
   public profiles    : any;
+  public tags :  any     = [];
 
   constructor(public navCtrl: NavController,
      public params: NavParams,
@@ -40,7 +43,9 @@ export class SearchResultPage {
     {
         console.log("parameter passed")
         let searchresult = params.get('searchvalue')
+        this.tags = searchresult;
         console.log(searchresult);
+        
     }
 
   }
@@ -54,7 +59,7 @@ export class SearchResultPage {
 
   loadAndParseProfiles()
    {
-      this.profiles = this._DB.searchProfiles();
+      this.profiles = this._DB.searchProfiles(this.tags);
 
    }
 

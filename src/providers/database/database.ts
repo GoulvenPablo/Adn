@@ -76,14 +76,50 @@ export class DatabaseProvider {
       });
    }
 
-   searchProfiles() : Observable<any>
+   searchProfiles(input) : Observable<any>
    {
+     for (let i of input) {
+         console.log(i); // "4", "5", "6"
+
+       }
+      return new Observable(observer =>
+      {
+
+         let profiles : any = [];
+         firebase.database().ref('profile').orderByChild('jobtype/name').equalTo('R&D').on("child_added", function(item) {
+
+             console.log(item.val().description);
+             console.log(item.key);
+             console.log(item.val().jobtype)
+              profiles.push({
+               id        : item.key,
+               jobtype : item.val().jobtype,
+
+
+               image     : item.val().image,
+
+               description   : item.val().description,
+
+
+           });
+         });
+         observer.next(profiles);
+         observer.complete();
+
+
+      });
+   }
+
+
+   getOwnProfileProfile() : Observable<any>
+   {
+     var myUserId = firebase.auth().currentUser.uid;
 
       return new Observable(observer =>
       {
 
          let profiles : any = [];
-         firebase.database().ref('profile').orderByChild('userId').equalTo('0L7KR5zTNcNmY1AG5E4KSv956mi2').on("child_added", function(item) {
+         firebase.database().ref('profile').orderByChild('userId').equalTo(myUserId).on("child_added", function(item) {
 
              console.log(item.val().description);
              console.log(item.key);
