@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+
+import {IonTagsInputModule} from "ionic-tags-input";
+
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -66,7 +69,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
 
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonTagsInputModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

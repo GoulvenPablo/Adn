@@ -29,6 +29,7 @@ export class HomePage {
 
 
 
+
  private _DOC 		: string 			= "Xy76Re34SdFR1";
 
 
@@ -67,24 +68,6 @@ export class HomePage {
   }
 
 
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    const val = ev.target.value;
-    console.log(this.items);
-    console.log(val);
-    this.searchvalue = val;
-    console.log(val.trim());
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-
-      })
-    }
-  }
 
 
   ionViewDidEnter()
@@ -268,6 +251,23 @@ export class HomePage {
 
 
    }
+
+   tagStrVerify(str: string): boolean{
+    return str !== 'ABC' && str.trim() !== '';
+  }
+
+  onChange(val: string){
+    console.log(val)
+    this.searchvalue = val
+  }
+
+  onFocus() {
+    console.log('Focus')
+  }
+
+  onBlur() {
+    console.log('Blur')
+  }
 
 
 
