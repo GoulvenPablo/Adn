@@ -1,0 +1,15 @@
+page-startpage {
+    .toolbar-background-ios{
+        border: none !important;
+        background-color: transparent;
+    }
+    .button-ios-secondary.activated{
+        background-color: color($colors,secondary) !important;
+    }
+}
+
+.app-content{
+    @extend %main-bg;
+    @extend %cover;
+    background-color: color($colors,third);
+}

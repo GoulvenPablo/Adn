@@ -9,7 +9,7 @@ import { Login } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 import { ProfilePage } from '../pages/profile/profile';
-
+import { StartPage } from '../pages/startpage/startpage';
 import firebase from 'firebase';
 
 

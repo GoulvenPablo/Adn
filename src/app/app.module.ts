@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { StartPage } from '../pages/startpage/startpage';
 
 import {IonTagsInputModule} from "ionic-tags-input";
 
@@ -61,7 +61,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ModalsPage,
       SearchResultPage,
       OffersPage,
-      ProjectsPage
+      ProjectsPage,
+      StartPage
 
   ],
   imports: [
@@ -92,7 +93,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
       ModalsPage,
       SearchResultPage,
       OffersPage,
-      ProjectsPage
+      ProjectsPage,
+      StartPage
   ],
   providers: [
 
