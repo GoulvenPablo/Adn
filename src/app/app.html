@@ -1,41 +1,29 @@
 <ion-menu side="left" id="authenticated" [content]="content">
-  <ion-header>
-    <ion-toolbar class="user-profile">
 
-      <ion-grid>
-        <ion-row>
-          <ion-col col-4>
-              <div class="user-avatar">
-                <img src="../assets/img/avatar.jpeg">
-              </div>
-          </ion-col>
-          <ion-col padding-top col-8>
-            <h2 ion-text class="no-margin bold text-white">
-              utilisateur
-            </h2>
-            <span ion-text color="light">Customer</span>
-          </ion-col>
-        </ion-row>
 
-        <ion-row no-padding class="other-data">
-          <ion-col no-padding class="column">
-            <button ion-button icon-left small full color="light" menuClose disabled>
-              <ion-icon name="contact"></ion-icon>
-              Edit Profile
-            </button>
-          </ion-col>
-          <ion-col no-padding class="column">
-            <button ion-button icon-left small full color="light" menuClose (click)="logOut()">
-              <ion-icon name="log-out"></ion-icon>
-              Log Out
-            </button>
-          </ion-col>
-        </ion-row>
 
-      </ion-grid>
 
-    </ion-toolbar>
-  </ion-header>
+        <ion-header text-center>
+        <ion-toolbar>
+          <div class="user-img">
+            <img src="assets/img/user.png" />
+            <ion-icon name="ios-camera" color="light" (click)="presentActionSheet()"></ion-icon>
+          </div>
+          <div class="perfonal-info">
+            <h4 no-margin>Adam Jone</h4>
+            <p>New York</p>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+
+
+    <button ion-button icon-left small full color="light" menuClose (click)="logOut()">
+      <ion-icon name="log-out"></ion-icon>
+      Log Out
+    </button>
+
+
+
 
   <ion-content color="primary">
 
@@ -46,6 +34,8 @@
       </button>
     </ion-list>
   </ion-content>
+
+
 
 </ion-menu>
 

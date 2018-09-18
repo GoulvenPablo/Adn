@@ -3,14 +3,255 @@
 
 // App Global Sass
 // --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.toolbar-ios{
+    ion-title{
+        padding: 0 75px 1px 55px;
+    }
+    .toolbar-title-ios{
+        font-weight: 400;
+    }
+}
+
+.logo{
+    padding-top: 45px !important;
+    img{
+        width: 110px;
+    }
+}
+
+.back-button-ios{
+    margin-left: 10px !important;
+}
+
+.back-button-icon-ios{
+    font-size: 2.2rem;
+}
+
+.bar-button-menutoggle-ios{
+    ion-icon{
+        font-size: 2.4rem;
+    }
+}
+
+.bar-button{
+    margin-left: 4px;
+}
+
+.bar-button-ios[icon-only]{
+    min-width: 1.9em;
+    font-size: 1.3rem;
+}
+
+.popover-ios{
+    .popover-content , .popover-arrow::after{
+        background-color: darken(color($colors,primary),15%);
+    }
+    .popover-content{
+        border-radius: 0;
+    }
+}
+
+ion-footer{
+    .toolbar-ios{
+        min-height: 42px;
+    }
+    .button-ios{
+        margin: 0;
+        height: 2em;
+    }
+    .button-ios-third.activated{
+        background-color: color($colors,third);
+    }
+}
+
+.activeColor{
+    color: color($colors,danger) !important;
+}
+
+// Header Search
+// --------------------------------------------------
+.search-toolbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    min-height: 45px;
+    padding: 5px 0;
+    margin-left: -1px;
+    border: none !important;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    -moz-transition: width 2s;
+    transition: width 2s;
+    .toolbar-background-ios , .searchbar-ios{
+        border: none !important;
+    }
+    .searchbar-ios{
+        .searchbar-input{
+            border-radius: 0;
+        }
+        .searchbar-search-icon{
+            top: 9px;
+        }
+    }
+}
+.activeSearch{
+    width: 75% !important;
+    -webkit-transition: width 2s !important; /* For Safari 3.1 to 6.0 */
+    -moz-transition: width 2s !important;
+    transition: width 2s !important;
+}
+
+// App statusbar(IOS platform) Sass
+// --------------------------------------------------
+.statusbar-padding{
+    &.search-toolbar{
+        top: 21px;
+        min-height: 35px;
+    }
+    .app-slider{
+        .swiper-pagination{
+            top: 74px;
+        }
+    }
+}
+
+ion-footer{
+    .statusbar-padding{
+        padding: 4px;
+        min-height: 50px;
+    }
+}
+
+.ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child{
+    padding-top: 4px !important;
+    min-height: 45px !important;
+}
+
+@media only screen and (max-width: 767px){
+    .ios{
+        .modal-wrapper{
+            .ion-page{
+                ion-header{
+                    .share-toolbar.statusbar-padding{
+                        &:first-child{
+                            padding: 4px;
+                            min-height: 60px;
+                            ion-title{
+                                padding-top: 0;
+                                height: 100%;
+                                min-height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// App Menu Sass
+// --------------------------------------------------
+ion-menu{
+    .menu-inner{
+        height: 500px !important;
+        top: 50px !important;
+    }
+    ion-backdrop{
+        background-color: transparent;
+    }
+    ion-header{
+        .toolbar-ios{
+            border-bottom: 1px solid rgba(255,255,255,.15);
+        }
+    }
+    ion-footer{
+        .toolbar-ios{
+            padding: 6px 0;
+            border-top: 1px solid rgba(255,255,255,.15);
+        }
+        .button-ios{
+            height: 1.4em;
+            float: right;
+            margin-right: -9px;
+            ion-icon{
+                font-size: 1.6em;
+                margin: 0;
+                padding: 4px .5em;
+            }
+        }
+    }
+    .toolbar-ios{
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .toolbar-background-ios{
+        background: transparent;
+        border: none !important;
+    }
+    .content-ios{
+        background-color: darken(color($colors,primary),15%);
+    }
+    .list-ios{
+        margin: 0 0 5px 0;
+    }
+    .item-ios{
+        width: 125px;
+        margin: 0 auto;
+        background-color: transparent;
+        &:last-child{
+            .label-ios{
+                border-bottom: 0;
+            }
+        }
+    }
+    .label-ios{
+        text-align: center;
+        font-size: 1.4rem;
+        padding: 0 0 12px 0;
+        margin: 13px 8px 0 0;
+        color: color($colors,light);
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    ion-icon{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .user-img{
+        position: relative;
+        display: inline-block;
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+        ion-icon{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: 1.7;
+            font-size: 1.5em;
+            border-radius: 50%;
+            background-color: color($colors,primary);
+        }
+    }
+    .perfonal-info{
+        position: relative;
+        h4{
+            font-size: 1.55rem;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        p{
+            font-size: 1.2rem;
+            margin: 3px 0 15px 0;;
+        }
+        h4 , p{
+            @extend %overflow;
+            color: color($colors,light);
+        }
+    }
+}

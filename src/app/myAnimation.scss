@@ -1,0 +1,108 @@
+@import "../assets/animate/animate.scss";
+.animateApp{
+    .social-media , .app-content-bg h4{
+        @include fadeInUp(
+            $duration: 1s,
+            $delay: .2s
+        );
+    }
+    .form-content{
+        @include fadeInUp(
+            $duration: 1.5s,
+            $delay: .85s
+        );
+    }
+    .activeColor{
+        @include pulse(
+            $count: 1000000000
+        );
+    }
+    ion-fab{
+        @include rotateIn(
+            $duration: 1.5s,
+            $delay: .5s
+        );
+    }
+    .main-list {
+        &:nth-child(10n){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: .1s
+            );
+        }
+        &:nth-child(10n+1){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: .4s
+            );
+        }
+        &:nth-child(10n+2){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: .8s
+            );
+        }
+        &:nth-child(10n+3){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 1.2s
+            );
+        }
+        &:nth-child(10n+4){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 2s
+            );
+        }
+        &:nth-child(10n+5){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 2.8s
+            );
+        }
+        &:nth-child(10n+6){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 3.2s
+            );
+        }
+        &:nth-child(10n+7){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 4s
+            );
+        }
+        &:nth-child(10n+8){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 4.8s
+            );
+        }
+        &:nth-child(10n+9){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 5.2s
+            );
+        }
+        &:nth-child(10n+10){
+            @include fadeInUp(
+                $duration: 1.2s,
+                $delay: 6s
+            );
+        }
+    }
+    .categories-list.card-ios{
+        &:nth-child(2n+1){
+            @include slideInLeft(
+                $duration: 1.5s,
+                $delay: .1s
+            );
+        }
+        &:nth-child(2n){
+            @include slideInRight(
+                $duration: 1.5s,
+                $delay: .1s
+            );
+        }
+    }
+}

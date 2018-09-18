@@ -11,7 +11,7 @@ import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 import { ProfilePage } from '../pages/profile/profile';
 import { StartPage } from '../pages/startpage/startpage';
 import firebase from 'firebase';
-
+import { ActionSheetController } from 'ionic-angular';
 
 export interface MenuItem {
     title: string;
@@ -29,12 +29,16 @@ export class MyApp {
   constructor(platform: Platform,
      statusBar: StatusBar,
      splashScreen: SplashScreen ,
+     public actionSheetCtrl: ActionSheetController,
       public authData: AuthData) {
 
       // Initialize Firebase
       this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Profile', component: ProfilePage, icon: 'profile'}
+      {title: 'Profile', component: ProfilePage, icon: 'profile'},
+      { title: 'Categories', component: 'Categories', icon: 'md-apps' },
+      { title: 'Favorite', component: 'Favorite', icon: 'md-heart' },
+      { title: 'Setting', component: 'Setting', icon: 'md-settings' },
 
 
 
