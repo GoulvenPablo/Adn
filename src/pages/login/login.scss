@@ -1,3 +1,99 @@
-page-login {
+.app-content-bg{
+    @extend %sec-bg;
+    @extend %cover;
+    background-color: lighten(color($colors,secondary),8%);
+    .scroll-content{
+        padding-bottom: 0 !important;
+    }
+    h4{
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin-bottom: 2rem;
+        color: color($colors,light);
+    }
+    .or{
+        display: inline-block;
+        white-space: nowrap;
+        background: color($colors , primary);
+        color: white;
+        width: 32px;
+        height: 32px;
+        line-height: 34px;
+        border-radius: 50%;
+        position: absolute;
+        top: -17px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}
 
+.login-content{
+    padding: 0 25px 16px 25px;
+}
+
+.social-media{
+    background: rgba(255, 255, 255, .25);
+    min-height: 90px;
+    .row{
+        justify-content: center;
+        min-height: 90px;
+        width: 180px;
+        margin: 0 auto;
+    }
+    ion-fab[center]{
+        top: 20px;
+    }
+    .fab-ios{
+        box-shadow: none !important;
+        i{
+            font-size: 2.4rem;
+            text-align: center;
+            &::before{
+                margin: 0 3px 0 0  !important;
+                display: block;
+            }
+        }
+    }
+}
+
+.form-content{
+    position: relative;
+    margin-top: 40px;
+    padding: 40px 15px 5px 15px;
+    background: rgba(255, 255, 255, .25);
+}
+
+.app-form{
+    background: rgba(255, 255, 255, .45);
+    .item-ios{
+        background: transparent;
+        min-height: 5rem;
+        ion-icon{
+            font-size: 2rem;
+            min-height: 2rem;
+            margin-right: 12px;
+        }
+    }
+    .item-block{
+        border-bottom: 1px solid #89827b !important;
+        &:last-of-type{
+            border: none !important;
+        }
+
+    }
+    input::-webkit-input-placeholder {
+        color: #4d4c4b;
+        font-size: 1.4rem;
+    }
+    input:-moz-placeholder {
+        color: #4d4c4b;
+        font-size: 1.4rem;
+    }
+}
+
+.forget-pass{
+    margin: 13px 17px;
+    font-size: 1.2rem;
+    color: color($colors,light);
 }

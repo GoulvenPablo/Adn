@@ -37,33 +37,4 @@
 
 
 
-
-   <ion-list>
-   	  <ion-item *ngFor="let location of locations">
-   	  	 <h2>{{ location.nom }}</h2>
-   	  	 <p>
-   	  	    age: {{ location.age }}<br>
-            metier: {{ location.emploi }}
-   	  	 </p>
-
-
-   	  	 <button
-            ion-button
-            color="secondary"
-            (click)="updateDocument(location)">
-         	  Update this record
-         </button>
-
-
-   	  	 <button
-            ion-button
-            color="danger"
-            (click)="deleteDocument(location)">
-         	  Delete this record
-         </button>
-
-
-   	  </ion-item>
-   </ion-list>
-
 </ion-content>
