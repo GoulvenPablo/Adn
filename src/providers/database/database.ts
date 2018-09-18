@@ -85,40 +85,43 @@ export class DatabaseProvider {
 
    searchProfiles(input) : Observable<any>
    {
-     for (let i of input) {
-         console.log(i); // "4", "5", "6"
 
-       }
       return new Observable(observer =>
       {
+        let profiles : any = [];
+        for (let i of input) {
+            console.log(i); // "4", "5", "6"
+            firebase.database().ref('profile').orderByChild('jobtype/0/name').equalTo(i).on("child_added", function(item) {
 
-         let profiles : any = [];
-         firebase.database().ref('profile').orderByChild('jobtype').equalTo('R&D').on("child_added", function(item) {
-
-             console.log(item.val().description);
-             console.log(item.key);
-             console.log(item.val().jobtype)
-              profiles.push({
-                id        : item.key,
-                jobtype : item.val().jobtype,
-                birthdate : item.val().birthdate,
-                phonenumber : item.val().phonenumber,
-                familyname : item.val().familyname,
-                association : item.val().association,
-                name : item.val().name,
-
-
-
-
-                image     : item.val().image,
-
-                description   : item.val().description,
+                console.log(item.val().description);
+                console.log(item.key);
+                console.log(item.val().jobtype)
+                 profiles.push({
+                   id        : item.key,
+                   jobtype : item.val().jobtype,
+                   birthdate : item.val().birthdate,
+                   phonenumber : item.val().phonenumber,
+                   familyname : item.val().familyname,
+                   association : item.val().association,
+                   name : item.val().name,
 
 
-           });
-         });
-         observer.next(profiles);
-         observer.complete();
+
+
+                   image     : item.val().image,
+
+                   description   : item.val().description,
+
+
+              });
+            });
+            observer.next(profiles);
+            observer.complete();
+
+          }
+
+
+
 
 
       });
