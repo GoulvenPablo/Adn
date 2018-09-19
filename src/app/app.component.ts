@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthData } from '../providers/auth-data';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
+import { Categories } from '../pages/categories/categories';
 import { HomePage } from '../pages/home/home';
 import {ManageDocumentPage} from "../pages/manage-document/manage-document";
 import { ProfilePage } from '../pages/profile/profile';
@@ -38,7 +39,7 @@ export class MyApp {
       this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
       {title: 'Profile', component: ProfilePage, icon: 'profile'},
-      { title: 'Categories', component: 'Categories', icon: 'md-apps' },
+      { title: 'Categories', component: Categories, icon: 'md-apps' },
       { title: 'Favorite', component: 'Favorite', icon: 'md-heart' },
       { title: 'Setting', component: 'Setting', icon: 'md-settings' },
 

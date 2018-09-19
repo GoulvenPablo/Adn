@@ -20,6 +20,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ModalsPage} from '../pages/modals/modals';
 import { Login } from '../pages/login/login';
 
+import { Categories } from '../pages/categories/categories';
+
 import {ResetPassword}from '../pages/reset-password/reset-password';
 import {Signup} from '../pages/signup/signup';
 
@@ -71,7 +73,8 @@ var config = {
       SearchResultPage,
       OffersPage,
       ProjectsPage,
-      StartPage
+      StartPage,
+      Categories
 
   ],
   imports: [
@@ -103,7 +106,8 @@ var config = {
       SearchResultPage,
       OffersPage,
       ProjectsPage,
-      StartPage
+      StartPage,
+      Categories
   ],
   providers: [
 

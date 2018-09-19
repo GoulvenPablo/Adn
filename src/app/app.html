@@ -1,42 +1,33 @@
-<ion-menu side="left" id="authenticated" [content]="content">
+<ion-menu [content]="content">
+  <ion-header text-center>
+    <ion-toolbar>
+      <div class="user-img">
+        <img src="assets/img/user.png" />
+        <ion-icon name="ios-camera" color="light" (click)="presentActionSheet()"></ion-icon>
+      </div>
+      <div class="perfonal-info">
+        <h4 no-margin>Adam Jone</h4>
+        <p>New York</p>
+      </div>
+    </ion-toolbar>
+  </ion-header>
 
-
-
-
-        <ion-header text-center>
-        <ion-toolbar>
-          <div class="user-img">
-            <img src="assets/img/user.png" />
-
-          </div>
-          <div class="perfonal-info">
-            <h4 no-margin>Adam Jone</h4>
-            <p>New York</p>
-          </div>
-        </ion-toolbar>
-      </ion-header>
-
-
-
-
-
-
-
-  <ion-content color="primary">
-    <button ion-button icon-left small full color="light" menuClose (click)="logOut()">
-      <ion-icon name="log-out"></ion-icon>
-      Log Out
-    </button>
-    <ion-list class="user-list">
-      <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
-        <ion-icon item-left [name]="menuItem.icon" color="primary"></ion-icon>
-        <span ion-text color="primary">{{menuItem.title}}</span>
-      </button>
+  <ion-content text-center>
+    <ion-list no-margin>
+      <ion-item menuClose no-lines *ngFor="let p of appMenuItems" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" color="grayColor"></ion-icon>
+        {{p.title}}
+      </ion-item>
     </ion-list>
-
   </ion-content>
 
-
+  <ion-footer>
+    <ion-toolbar>
+      <button (click)="logOut()" ion-button clear icon-only menuClose><ion-icon name="md-power" color="light"></ion-icon></button>
+    </ion-toolbar>
+  </ion-footer>
 
 </ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" [class.animateApp]="animateVarible==true" #content swipeBackEnabled="false"></ion-nav>
