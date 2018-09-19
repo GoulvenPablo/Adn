@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>favorite</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="toolbar-icon search-btn" (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button (click)="presentFilterPopover($event)" ion-button icon-only class="toolbar-icon">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar class="search-toolbar" [ngClass]="{'activeSearch':showSearch==true}" no-padding>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="main-list" *ngFor="let item of mainList" (click)="goTo('Details')" [hidden]="mainList.length==0">
+    <div class="list-img" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+      <ion-icon name="ios-trash" color="light" (click)="removeItem(item)" class="like-icon"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-left>
+            <div class="stars">
+              <ion-icon name="md-star" color="star"></ion-icon>
+              <ion-icon name="md-star" color="star"></ion-icon>
+              <ion-icon name="md-star" color="star"></ion-icon>
+              <ion-icon name="md-star" color="star"></ion-icon>
+              <ion-icon name="md-star-half" color="star"></ion-icon>
+              <p color="dark">4.6</p>
+            </div>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <ion-icon name="md-eye" color="star" class="eye-icon"></ion-icon>
+            120
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-card-content>
+      <ion-card-title class="list-heading" no-padding>
+        Title one of 1st Article
+      </ion-card-title>
+      <p class="more-info">
+        is simply dummy text of the printing & typesetting industry.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <p class="empty-list" *ngIf="mainList.length==0" text-capitalize>
+    their is no item in favorite list
+  </p>
+</ion-content>

@@ -36,6 +36,9 @@ import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ImagePicker } from '@ionic-native/image-picker';
 
+
+import { Keyboard } from '@ionic-native/keyboard';
+
 import { HttpClientModule } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
@@ -113,6 +116,7 @@ var config = {
     ImagePicker,
     Crop,
     Camera,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })

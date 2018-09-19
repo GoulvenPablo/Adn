@@ -25,14 +25,16 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   appMenuItems: Array<MenuItem>;
   rootPage:any = TabsPage;
+  pages: Array<any>;
 
-  constructor(platform: Platform,
-     statusBar: StatusBar,
-     splashScreen: SplashScreen ,
+  constructor(public platform: Platform,
+     public statusBar: StatusBar,
+     public splashScreen: SplashScreen ,
      public actionSheetCtrl: ActionSheetController,
       public authData: AuthData) {
 
       // Initialize Firebase
+      this.initializeApp();
       this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
       {title: 'Profile', component: ProfilePage, icon: 'profile'},
@@ -94,6 +96,16 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+    });
+  }
+
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 
