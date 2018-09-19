@@ -1,0 +1,32 @@
+page-filter {
+    .list-ios{
+        margin: 20px 0;
+    }
+    ion-item-group{
+        background-color: transparent !important;
+        border-bottom: 1px solid rgba(255,255,255,.15);;
+        &:last-child{
+            border: none !important;
+        }
+    }
+    .item-block{
+        background-color: transparent;
+        color: white;
+    }
+    .list-header-ios{
+        color: white;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-transform: initial;
+    }
+    .checkbox-md{
+        .checkbox-checked{
+            background-color: #989898 !important;
+        }
+    }
+    .setting-content{
+        ion-item-group{
+            padding-bottom: 5px;
+        }
+    }
+}

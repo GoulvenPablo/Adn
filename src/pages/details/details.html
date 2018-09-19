@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="details-content">
+    <div class="detail-img" style="background-image: url(assets/img/01.png)">
+      <div class="user-action">
+        <ion-icon name="md-heart" color="light" (click)="activeLike()" [ngClass]="{'activeColor':like}"></ion-icon>
+        <ion-icon name="md-share" color="light" (click)="presentshareModal()"></ion-icon>
+      </div>
+      <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+    </div>
+
+    <div class="details">
+      <ion-card-title class="list-heading" no-padding>
+        Title one of 1st Article <span class="article-info">12 May 2017</span>
+      </ion-card-title>
+      <p class="more-info">
+        is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <span class="article-info">Writer : Martin Adam</span>
+    </div>
+
+    <button ion-button block color="primary">Comments</button>
+
+    <div class="comments">
+      <ion-item no-lines>
+        <ion-avatar class="comment" item-start>
+          <img src="assets/img/user1.png">
+        </ion-avatar>
+        <h2>Adam Jone <span class="article-info">15 May 2017  10 pm</span></h2>
+        <p>is simply dummy text of the printing and typesetting industry. </p>
+        <ion-row class="comment-action">
+          <ion-col col-6>
+            <button ion-button clear color="grayColor"><ion-icon name="md-heart" color="danger"></ion-icon>12</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button clear color="danger">Reply</button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="reply-comment" no-lines>
+        <ion-avatar item-start>
+          <img src="assets/img/user2.png">
+        </ion-avatar>
+        <h2>Lela Edwards<span class="article-info">Today at 2:17 PM</span></h2>
+        <p>is simply dummy text of the printing and typesetting industry. </p>
+      </ion-item>
+
+      <button (click)="commentModal()" ion-button clear block>see more</button>
+    </div>
+  </div>
+</ion-content>

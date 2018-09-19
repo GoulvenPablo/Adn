@@ -112,4 +112,5 @@ export class MyApp {
 
 
   }
+  public animateVarible:boolean=true;
 }

@@ -1,0 +1,88 @@
+page-comment{
+    .toolbar-ios{
+        ion-title{
+            padding: 0 16px 1px;
+        }
+    }
+    .comments{
+        margin-top: 5px;
+    }
+}
+
+.comment-footer{
+    background: color($colors, light);
+    .row{
+        align-items: center;
+    }
+    .item{
+        background: none;
+        padding: 8px 5px 0 8px;
+        textarea{
+            font-size: 1.4rem;
+            line-height:1.8rem;
+        }
+    }
+}
+
+.comments{
+    .label-ios{
+        padding: 4px 0;
+    }
+}
+
+
+
+// .comments{
+//     display: inline-block;
+//     width: 100%; 
+//     .commentTitle{
+//         p{
+//             span{
+//                 float: right;
+//                 display: inline-block;
+//                 white-space: nowrap;
+//                 font-size: 1.6rem;
+//             }
+//         }
+//     }
+//     .commentItem{
+//         h3{
+//             font-size: 1.6rem;
+//         }
+//         .item{
+//             align-items: flex-start;
+//             border-top: 1px solid #ddd;
+//             padding-left:10px;
+//                 .item-inner{
+//                     border: none;
+//                     p{
+//                         font-size: 1.1rem;
+//                     }
+//                     .user-comment{
+//                         white-space: normal;
+//                         font-size: 1.35rem;
+//                         max-height: 50px;
+//                         overflow: hidden;
+//                         line-height: 1.7rem
+//                     }
+//                     .commentAction{
+//                         .col{
+//                             padding: 0; 
+//                             button{
+//                                 font-size: 13px; 
+//                                 margin: 0;
+//                             }
+//                         }
+//                     }
+//                 }
+//         }
+//         & .reply{
+//             margin-left: 65px;
+//             width: calc(100% - 65px);
+//             background: lighten(color($colors,grayColor),6%); 
+//             border: none;
+//             margin-bottom: 10px;
+//             border-radius: 3px;
+//         }
+//     }
+// }

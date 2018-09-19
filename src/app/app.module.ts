@@ -41,7 +41,13 @@ import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
 import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
-
+var config = {
+  backButtonText: '',
+  backButtonIcon: 'md-arrow-back',
+  pageTransition: 'ios',
+  mode:'ios',
+  menuType: 'overlay'
+};
 
 
 

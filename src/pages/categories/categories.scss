@@ -1,0 +1,22 @@
+.categories-list{ 
+    .detail-img{
+        height: 100px;
+    }
+    &.card-ios {
+        position: relative;
+        text-align: center;
+        margin: 5px;
+        border-radius: 0;
+        width: calc(100% - 10px);
+    }
+    .card-title {
+        @extend %overflow;
+        padding: 0 10px;
+        position: absolute;
+        bottom: 10px;
+        font-size: 1.3em;
+        width: 100%;
+        text-transform: capitalize;
+        color: color($colors,light);
+    }
+}

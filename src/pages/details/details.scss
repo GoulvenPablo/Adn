@@ -1,0 +1,145 @@
+.details-content{
+    .detail-img{
+        margin: 5px;
+        width: calc(100% - 10px);
+        position: relative;
+    }
+    .stars{
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        ion-icon{
+            font-size: 1.5em;
+        }
+    }
+    .user-action{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        ion-icon{
+            font-size: 2.1rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+    .button-ios{
+        border-radius: 0;
+    }
+    .list-heading{
+        white-space: normal !important;
+    }
+}
+
+.details{
+    padding: 8px 12px;
+    p{
+        margin-top: 5px;
+        height: auto;
+        overflow: visible;
+        line-height: 1.35;
+        font-size: 1.35rem !important;
+        color: darken(color($colors,light),7%) !important;
+    }
+    .list-heading{
+        span{
+            float: right;
+            margin-top: 3px;
+        }
+    }
+}
+.article-info{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    color: color($colors,danger) !important;
+}
+
+rating{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    ul {
+        padding: 0;
+        margin: 6px 0;
+        &.rating li {
+            padding: 6px !important;
+            background: none;
+            color: color($colors,star);
+            ion-icon{
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+.detail-img{
+    @extend %cover;
+    height: 135px;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @extend %linear-gradient;
+    }
+}
+
+.comments{
+    .item-ios{
+        align-items: flex-start;
+        ion-avatar{
+            &[item-start]{
+                margin: 8px 8px 8px 0;
+            }
+            img{
+                object-fit: cover;
+            }
+        }
+        h2{
+            font-size: 1.4rem;
+            color: color($colors,primary);
+            span{
+                float: right;
+            }
+        }
+    }
+    .comment-action{
+        width: 125px;
+        float: right;
+        .button-ios{
+            height: 21px;
+            font-size: 1.3rem;
+            .ion-md-heart{
+                font-size: 1.9rem;
+                margin-right: 7px;
+            }
+        }
+        .col{
+            padding: 0 !important;
+        }
+    }
+    p{
+        font-size: 1.3rem;
+        height: 32px;
+        white-space: normal;
+        color: darken(color($colors,light),7%) !important;
+    }
+}
+
+.reply-comment{
+    padding-left: 35px;
+    background-color: color($colors,grayColor);
+    ion-avatar{
+        min-width: 38px;
+        min-height: 38px;
+        img{
+            width: 38px;
+            height: 38px;
+        }
+    }
+    h2 , .article-info , p{
+        color: color($colors,secondary) !important;
+    }
+}

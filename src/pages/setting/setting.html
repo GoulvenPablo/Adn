@@ -1,0 +1,101 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title color="secondary" text-capitalize>setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="setting-content">
+
+  <ion-item-group>
+    <ion-item-divider>Edit Your Information</ion-item-divider>
+
+    <ion-list no-margin>
+      <ion-item no-lines>
+        <ion-input type="text" placeholder="Adam Jone" disabled="true" (blur)="focusInput(name)" #name></ion-input>
+        <ion-icon name="md-create" (click)="focusInput(name)" item-right></ion-icon>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-input type="email" placeholder="Jonny@gmail.com" disabled="true" (blur)="focusInput(email)" #email></ion-input>
+        <ion-icon name="md-create" (click)="focusInput(email)" item-right></ion-icon>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-input type="password" placeholder="********" disabled="true" (blur)="focusInput(password)" #password></ion-input>
+        <ion-icon name="md-create" (click)="focusInput(password)" item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item mode="md" class="item-title" no-lines>
+      <ion-label>Send notification</ion-label>
+      <ion-checkbox mode="md" color="primary" item-end></ion-checkbox>
+    </ion-item>
+
+    <ion-item mode="md" no-lines>
+      <ion-label>Send me notificaton on my phone</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+    <ion-item mode="md" no-lines>
+      <ion-label>Send me an email with notification</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item mode="md" class="item-title" no-lines>
+      <ion-label>Choose your intersets</ion-label>
+      <ion-checkbox mode="md" color="primary" item-end></ion-checkbox>
+    </ion-item>
+
+    <ion-item mode="md" no-lines>
+      <ion-label>Political News</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+    <ion-item mode="md" no-lines>
+      <ion-label>Economic News</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+    <ion-item mode="md" no-lines>
+      <ion-label>Judicial News</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+    <ion-item mode="md" no-lines>
+      <ion-label>Sports News</ion-label>
+      <ion-checkbox mode="md" item-end></ion-checkbox>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>App Language</ion-item-divider>
+
+    <ion-list no-margin radio-group>
+      <ion-item no-lines>
+        <ion-label>English</ion-label>
+        <ion-radio checked="true" value="English"></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>French</ion-label>
+        <ion-radio value="French"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-item-group>
+
+  <ion-item-group class="setting-list" margin-bottom>
+    <ion-item-divider>Animation</ion-item-divider>
+
+    <ion-list no-margin radio-group>
+      <ion-item mode="md" no-lines>
+        <ion-label>Availability</ion-label>
+        <ion-checkbox mode="md" (ionChange)="animateApp($event)"  checked="{{action}}" item-right></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-item-group>
+
+</ion-content>

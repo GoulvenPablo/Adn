@@ -7,6 +7,7 @@
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve"
   },
@@ -26,6 +27,7 @@
     "@ionic-native/image-picker": "^4.12.2",
     "@ionic-native/splash-screen": "3.4.2",
     "@ionic-native/status-bar": "3.4.2",
+    "@ionic-native/keyboard": "^4.0.0",
     "@ionic/storage": "2.0.1",
     "angularfire": "^2.3.0",
     "angularfire2": "^5.0.0-rc.3",

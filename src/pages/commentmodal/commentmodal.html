@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Comments</ion-title>
+    <ion-buttons (click)="dismiss()" end>
+      <button class="close-modal" ion-button icon-only text-end>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div class="details" padding-top>
+        <ion-card-title class="list-heading" no-padding>
+            Title one of 1st Article
+        </ion-card-title>
+        <ion-row>
+            <ion-col col-6>
+                <span class="article-info">12 May 2017</span>
+            </ion-col>
+            <ion-col col-6 text-right>
+                <span class="article-info">Writer : Martin Adam</span>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="comments">
+        <ion-item no-lines>
+            <ion-avatar class="comment" item-start>
+                <img src="assets/img/user1.png">
+            </ion-avatar>
+            <h2>Adam Jone <span class="article-info">15 May 2017  10 pm</span></h2>
+            <p>is simply dummy text of the printing and typesetting industry. </p>
+            <ion-row class="comment-action">
+                <ion-col col-6>
+                <button ion-button clear color="grayColor"><ion-icon name="md-heart" color="danger"></ion-icon>12</button>
+                </ion-col>
+                <ion-col col-6>
+                <button ion-button clear color="danger">Reply</button>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item class="reply-comment" no-lines>
+            <ion-avatar item-start>
+                <img src="assets/img/user2.png">
+            </ion-avatar>
+            <h2>Lela Edwards<span class="article-info">Today at 2:17 PM</span></h2>
+            <p>is simply dummy text of the printing and typesetting industry. </p>
+        </ion-item>
+    </div>
+
+</ion-content>
+<ion-footer class="comment-footer">
+  <ion-row>
+    <ion-col no-padding>
+        <ion-item no-lines>
+            <ion-textarea type="text" placeholder="Add your comment" no-margin></ion-textarea>
+        </ion-item>
+    </ion-col>
+    <ion-col col-2 text-right no-padding>
+        <button ion-button icon-only clear>
+            <ion-icon color="primary" name="md-send"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
