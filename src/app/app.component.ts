@@ -56,7 +56,7 @@ export class MyApp {
 
           if (!user) {
               console.log("not login");
-              this.rootPage = Login;
+              this.rootPage = StartPage;
 
 
 

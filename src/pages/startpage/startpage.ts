@@ -13,7 +13,7 @@ export class StartPage {
 
 //goTo function
   goTo(page){
-    this.navCtrl.push(page);
+    this.navCtrl.push(Login);
   }
 
 }
