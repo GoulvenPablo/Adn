@@ -76,7 +76,7 @@ var config = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,config),
     HttpClientModule,
     HttpModule,
     AngularFireDatabaseModule,

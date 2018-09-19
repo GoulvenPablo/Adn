@@ -131,6 +131,10 @@ export class HomePage {
     pageModal.present();
   }
 
+  goTo(page){
+    this.navCtrl.push(page);
+  }
+
    search(){
 
      console.log(this.searchvalue);

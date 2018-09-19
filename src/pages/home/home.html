@@ -1,5 +1,5 @@
 <!-- -->
-<ion-header>
+<ion-header class="my-header">
   <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -26,7 +26,9 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content fullscreen  (ionScroll)="scrollingFun($event)">
+
+
+<<ion-content fullscreen  (ionScroll)="scrollingFun($event)">
   <ion-slides class="app-slider" pager="true" (ionSlideDidChange)="slideChanged()">
     <ion-slide *ngFor="let slide of news ">
         <div class="slide-content">
