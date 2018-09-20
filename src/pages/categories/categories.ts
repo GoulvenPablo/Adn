@@ -13,7 +13,7 @@ export class Categories {
   showSearch: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.category = [{img: 'assets/img/11.png', title: 'political'}, {img: 'assets/img/22.png', title: 'economist'}, {img: 'assets/img/33.png', title: 'sports'}, {img: 'assets/img/44.png', title: 'weather'}, {img: 'assets/img/55.png', title: 'financial'}]
+    this.category = [{img: 'assets/img/11.png', title: 'associations'}, {img: 'assets/img/22.png', title: 'economist'}, {img: 'assets/img/33.png', title: 'sports'}, {img: 'assets/img/44.png', title: 'weather'}, {img: 'assets/img/55.png', title: 'financial'}]
   }
 
 // searchbar
