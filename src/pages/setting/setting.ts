@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { MyApp } from '../../app/app.component';
 import { Keyboard } from '@ionic-native/keyboard';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 
@@ -27,7 +27,8 @@ export class Setting {
     public navParams: NavParams,
      public popoverCtrl: PopoverController,
      public _myApp:MyApp,
-     private keyboard: Keyboard) {
+     private keyboard: Keyboard,
+   private nativeStorage: NativeStorage) {
     this.action = this._myApp.animateVarible;
   }
 
@@ -61,6 +62,12 @@ export class Setting {
 
   onChange(val: string){
     console.log(val)
+    this.nativeStorage.setItem('preference', {property: val})
+  .then(
+    () => console.log('Stored prefernces!'),
+    error => console.error('Error storing item', error)
+  );
+
   }
 
 }

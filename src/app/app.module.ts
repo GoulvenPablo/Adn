@@ -48,8 +48,7 @@ import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
-
-import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 
@@ -87,7 +86,7 @@ var config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,config),
-    IonicStorageModule.forRoot(),
+
     HttpClientModule,
     HttpModule,
     AngularFireDatabaseModule,
@@ -129,6 +128,7 @@ var config = {
     Crop,
     Camera,
     Keyboard,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })

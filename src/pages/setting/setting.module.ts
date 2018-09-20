@@ -4,13 +4,14 @@ import { Setting } from './setting';
 import {IonTagsInputModule} from "ionic-tags-input";
 
 
+
 @NgModule({
   declarations: [
     Setting,
   ],
   imports: [
     IonicPageModule.forChild(Setting),
-    IonTagsInputModule,
+    IonTagsInputModule
 
 
   ],
