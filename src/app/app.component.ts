@@ -13,7 +13,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { StartPage } from '../pages/startpage/startpage';
 import firebase from 'firebase';
 import { ActionSheetController } from 'ionic-angular';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+
 
 export interface MenuItem {
     title: string;
@@ -33,8 +33,7 @@ export class MyApp {
      public statusBar: StatusBar,
      public splashScreen: SplashScreen ,
      public actionSheetCtrl: ActionSheetController,
-      public authData: AuthData,
-      private sqlite: SQLite) {
+      public authData: AuthData) {
 
       // Initialize Firebase
       this.initializeApp();

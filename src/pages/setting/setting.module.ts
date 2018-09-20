@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { Setting } from './setting';
 import {IonTagsInputModule} from "ionic-tags-input";
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -9,7 +11,9 @@ import {IonTagsInputModule} from "ionic-tags-input";
   ],
   imports: [
     IonicPageModule.forChild(Setting),
-    IonTagsInputModule
+    IonTagsInputModule,
+    SQLite,
+    SQLitePorter
   ],
   exports: [
     Setting

@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StartPage } from '../pages/startpage/startpage';
 
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+
 import {IonTagsInputModule} from "ionic-tags-input";
 
 import { AboutPage } from '../pages/about/about';
@@ -132,6 +134,7 @@ var config = {
     Camera,
     Keyboard,
     SQLite,
+    SQLitePorter,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })

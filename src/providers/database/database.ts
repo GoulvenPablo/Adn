@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
+import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import { Observable } from "rxjs/Observable";
-
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
 
 
 // We MUST import both the firebase AND firestore modules like so
@@ -16,9 +18,16 @@ export class DatabaseProvider {
 
    private _DB : any;
 
+   private _LocalDB : SQLiteObject;
+   private _LocalDB_NAME : string 		= "ionic.db";
 
 
-   constructor(public http: Http)
+
+   constructor(public http: Http,
+  
+            private _PLAT       : Platform,
+     			   private _SQL        : SQLite,
+     			   private _PORTER     : SQLitePorter)
    {
       // Initialise access to the firestore service
       this._DB = firebase.firestore();
