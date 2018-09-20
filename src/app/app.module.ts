@@ -46,6 +46,15 @@ import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
 import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
+
+
+
+import { IonicStorageModule } from '@ionic/storage';
+
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+
+
+
 var config = {
   backButtonText: '',
   backButtonIcon: 'md-arrow-back',
@@ -80,6 +89,7 @@ var config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,config),
+    IonicStorageModule.forRoot(),
     HttpClientModule,
     HttpModule,
     AngularFireDatabaseModule,
@@ -121,6 +131,7 @@ var config = {
     Crop,
     Camera,
     Keyboard,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, ImageProvider, PreloaderProvider
   ]
 })

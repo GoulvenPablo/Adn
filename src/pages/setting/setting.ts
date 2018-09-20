@@ -4,6 +4,11 @@ import { MyApp } from '../../app/app.component';
 import { Keyboard } from '@ionic-native/keyboard';
 
 
+
+
+
+
+
 @IonicPage()
 @Component({
   selector: 'page-setting',
@@ -12,6 +17,10 @@ import { Keyboard } from '@ionic-native/keyboard';
 export class Setting {
 
   public action = false;
+  isvalid: boolean;
+  public todo = {};
+  tags = ['Ionic', 'Angular', 'TypeScript'];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public _myApp:MyApp, private keyboard: Keyboard) {
     this.action = this._myApp.animateVarible;
@@ -19,7 +28,7 @@ export class Setting {
 
   // animate Function
   public checkbox;
-  animateApp(e:any){ 
+  animateApp(e:any){
     this._myApp.animateVarible = e.checked;
     this.action = this._myApp.animateVarible;
   }
@@ -31,6 +40,22 @@ export class Setting {
       input.setFocus();
       this.keyboard.show();
     }
+  }
+
+  setPreferencies(){
+
+    console.log("ok")
+    console.log(this.isvalid)
+
+  }
+
+
+  tagStrVerify(str: string): boolean{
+   return str !== 'ABC' && str.trim() !== '';
+  }
+
+  onChange(val: string){
+    console.log(val)
   }
 
 }

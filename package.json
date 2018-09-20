@@ -27,6 +27,7 @@
     "@ionic-native/image-picker": "^4.12.2",
     "@ionic-native/keyboard": "^4.0.0",
     "@ionic-native/splash-screen": "3.4.2",
+    "@ionic-native/sqlite": "^4.14.0",
     "@ionic-native/status-bar": "3.4.2",
     "@ionic/storage": "^2.0.1",
     "angularfire": "^2.3.0",

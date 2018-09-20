@@ -54,22 +54,13 @@
       <ion-checkbox mode="md" color="primary" item-end></ion-checkbox>
     </ion-item>
 
-    <ion-item mode="md" no-lines>
-      <ion-label>Political News</ion-label>
-      <ion-checkbox mode="md" item-end></ion-checkbox>
-    </ion-item>
-    <ion-item mode="md" no-lines>
-      <ion-label>Economic News</ion-label>
-      <ion-checkbox mode="md" item-end></ion-checkbox>
-    </ion-item>
-    <ion-item mode="md" no-lines>
-      <ion-label>Judicial News</ion-label>
-      <ion-checkbox mode="md" item-end></ion-checkbox>
-    </ion-item>
-    <ion-item mode="md" no-lines>
-      <ion-label>Sports News</ion-label>
-      <ion-checkbox mode="md" item-end></ion-checkbox>
-    </ion-item>
+    <ion-tags-input
+       [(ngModel)]="tags"
+
+       (onChange)="onChange($event)">
+     </ion-tags-input>
+
+
   </ion-item-group>
 
   <ion-item-group>
