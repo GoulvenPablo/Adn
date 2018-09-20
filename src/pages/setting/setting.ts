@@ -30,6 +30,13 @@ export class Setting {
      private keyboard: Keyboard,
    private nativeStorage: NativeStorage) {
     this.action = this._myApp.animateVarible;
+
+    this.nativeStorage.getItem('preference')
+    .then(
+      data => console.log(data),
+      error => console.error(error)
+    );
+
   }
 
   // animate Function

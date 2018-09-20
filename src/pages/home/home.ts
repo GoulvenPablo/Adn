@@ -13,6 +13,8 @@ import { AngularFireObject, AngularFireList } from 'angularfire2/database';
 import { DatabaseProvider } from '../../providers/database/database';
 import { ImagePicker } from '@ionic-native/image-picker';
 
+import { NativeStorage } from '@ionic-native/native-storage';
+
 
 @Component({
   selector: 'page-home',
@@ -56,11 +58,17 @@ export class HomePage {
          public menuctrl: MenuController,
        private _DB: DatabaseProvider,
         private _ALERT  : AlertController,
-      private modalCtrl: ModalController) {
+      private modalCtrl: ModalController,
+    private nativeStorage: NativeStorage) {
 
         this.news = [{category:'Today News',img: 'assets/img/slide1.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Edward bush', time: '5 Mins ago'}, {category:'Political',img: 'assets/img/slide2.png', title: 'Donald TrumpThe standard Lorem Ipsum passage.', name: 'Jossef Josh', time: '15 Mins ago'}, {category:'Economist',img: 'assets/img/slide3.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}, {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
 
           this.initializeItems();
+          this.nativeStorage.getItem('preference')
+          .then(
+            data => console.log(data),
+            error => console.error(error)
+          );
 
 
 
