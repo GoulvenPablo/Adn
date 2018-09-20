@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { MyApp } from '../../app/app.component';
 import { Keyboard } from '@ionic-native/keyboard';
-import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { SQLite } from '@ionic-native/sqlite';
+
+
 
 
 
@@ -27,14 +27,9 @@ export class Setting {
     public navParams: NavParams,
      public popoverCtrl: PopoverController,
      public _myApp:MyApp,
-     private keyboard: Keyboard,
-     private sqlitePorter:SQLitePorter) {
-
-
+     private keyboard: Keyboard) {
     this.action = this._myApp.animateVarible;
   }
-
-
 
   // animate Function
   public checkbox;
