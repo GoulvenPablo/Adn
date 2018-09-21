@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { Categories } from './categories';
 import { OffersPage } from '../offers/offers';
+import { SearchPage } from '../search/search';
+import { AssociationsPage } from '../associations/associations';
+import { InternshipPage } from '../internship/internship';
+import { NewsPage } from '../news/news';
 
 @NgModule({
   declarations: [
@@ -9,7 +13,11 @@ import { OffersPage } from '../offers/offers';
   ],
   imports: [
     IonicPageModule.forChild(Categories),
-    OffersPage
+    OffersPage,
+    SearchPage,
+    AssociationsPage,
+    InternshipPage,
+    NewsPage
   ],
   exports: [
     Categories

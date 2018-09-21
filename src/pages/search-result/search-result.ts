@@ -37,6 +37,7 @@ export class SearchResultPage {
                    private _LOADER      : PreloaderProvider,
                    private _DB          : DatabaseProvider
   ) {
+    this.loadAndParseProfiles();
 
 
     if(params.get('isEdited'))
@@ -45,16 +46,11 @@ export class SearchResultPage {
         let searchresult = params.get('searchvalue')
         this.tags = searchresult;
         console.log(searchresult);
-        
+
     }
 
   }
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchResultPage');
-    this.loadAndParseProfiles();
-  }
 
 
   loadAndParseProfiles()

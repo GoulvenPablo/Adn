@@ -49,6 +49,10 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
 import { NativeStorage } from '@ionic-native/native-storage';
+import { AssociationsPage } from '../pages/associations/associations';
+import { SearchPage } from '../pages/search/search';
+import { InternshipPage } from '../pages/internship/internship';
+import { NewsPage } from '../pages/news/news';
 
 
 
@@ -80,7 +84,11 @@ var config = {
       OffersPage,
       ProjectsPage,
       StartPage,
-      Categories
+      Categories,
+      SearchPage,
+      AssociationsPage,
+      InternshipPage,
+      NewsPage
 
   ],
   imports: [
@@ -114,7 +122,11 @@ var config = {
       OffersPage,
       ProjectsPage,
       StartPage,
-      Categories
+      Categories,
+      SearchPage,
+      AssociationsPage,
+      InternshipPage,
+      NewsPage
   ],
   providers: [
 
