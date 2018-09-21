@@ -129,6 +129,98 @@ export class DatabaseProvider {
    }
 
 
+   searchJobs(input) : Observable<any>
+   {
+
+      return new Observable(observer =>
+      {
+        let profiles : any = [];
+        for (let i of input) {
+            console.log(i); // "4", "5", "6"
+            firebase.database().ref('jobs').orderByChild('jobtype/0/name').equalTo(i).limitToLast(10).on("child_added", function(item) {
+
+                console.log(item.val().description);
+                console.log(item.key);
+                console.log(item.val().jobtype)
+                 profiles.push({
+                   id        : item.key,
+                   jobtype : item.val().jobtype,
+                   birthdate : item.val().birthdate,
+                   phonenumber : item.val().phonenumber,
+                   familyname : item.val().familyname,
+                   association : item.val().association,
+                   name : item.val().name,
+
+
+
+
+                   image     : item.val().image,
+
+                   description   : item.val().description,
+
+
+              });
+            });
+            observer.next(profiles);
+            observer.complete();
+            console.log("reception")
+
+          }
+
+
+
+
+
+      });
+   }
+
+
+   renderJobs() : Observable<any>
+   {
+
+      return new Observable(observer =>
+      {
+        let profiles : any = [];
+
+            firebase.database().ref('jobs').orderByKey().limitToLast(10).on("child_added", function(item) {
+
+                console.log(item.val().description);
+                console.log(item.key);
+                console.log(item.val().jobtype)
+                 profiles.push({
+                   id        : item.key,
+                   jobtype : item.val().jobtype,
+                   birthdate : item.val().birthdate,
+                   phonenumber : item.val().phonenumber,
+                   familyname : item.val().familyname,
+                   association : item.val().association,
+                   name : item.val().name,
+
+
+
+
+                   image     : item.val().image,
+
+                   description   : item.val().description,
+
+
+              });
+            });
+            observer.next(profiles);
+            observer.complete();
+            console.log("reception")
+
+
+
+
+
+
+
+      });
+   }
+
+
+
    getOwnProfileProfile() : Observable<any>
    {
      var myUserId = firebase.auth().currentUser.uid;
