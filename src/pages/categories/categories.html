@@ -18,7 +18,7 @@
 
 
 <ion-content>
-  <ion-card class="categories-list" *ngFor="let item of category" (click)="goTo('List')">
+  <ion-card class="categories-list" *ngFor="let item of category" (click)="goTo(item.page)">
     <div class="detail-img" [ngStyle]="{'background-image': 'url(' + item.img + ')'}"></div>
     <div class="card-title">{{item.title}}</div>
   </ion-card>

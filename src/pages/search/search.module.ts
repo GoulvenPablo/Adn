@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { OffersPage } from './offers';
+import { SearchPage } from './search';
 
 @NgModule({
   declarations: [
-    OffersPage,
+    SearchPage,
   ],
   imports: [
-    OffersPage,
+    SearchPage,
   ],
   exports: [
-    OffersPage
+    SearchPage
   ]
 })
-export class OffersPageModule {}
+export class SearchPageModule {}

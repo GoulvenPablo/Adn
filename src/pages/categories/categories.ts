@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { OffersPage } from '../offers/offers';
 
 @IonicPage()
 @Component({
@@ -13,7 +13,11 @@ export class Categories {
   showSearch: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.category = [{img: 'assets/img/11.png', title: 'Associations'}, {img: 'assets/img/22.png', title: 'Stage'}, {img: 'assets/img/33.png', title: 'Nouveauté'}, {img: 'assets/img/44.png', title: 'Recherche'}, {img: 'assets/img/55.png', title: 'Emploi'}]
+    this.category = [{img: 'assets/img/11.png', title: 'Associations', page: 'Associations'},
+     {img: 'assets/img/22.png', title: 'Stage', page: 'Internship'},
+     {img: 'assets/img/33.png', title: 'Nouveauté', page: 'Nouveaute'},
+      {img: 'assets/img/44.png', title: 'Recherche', page: 'Recherche'},
+      {img: 'assets/img/55.png', title: 'Emploi', page: OffersPage}]
   }
 
 // searchbar
@@ -24,6 +28,9 @@ export class Categories {
 //goTo function
   goTo(page){
     this.navCtrl.push(page);
+    console.log(page)
   }
+
+
 
 }
