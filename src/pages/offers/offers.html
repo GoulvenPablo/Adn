@@ -1,18 +1,49 @@
-<!--
-  Generated template for the OffersPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>offers</ion-title>
+  <ion-navbar color="primary" hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>Offres</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="toolbar-icon search-btn" (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button (click)="presentFilterPopover($event)" ion-button icon-only class="toolbar-icon">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
+  <ion-toolbar class="search-toolbar" [ngClass]="{'activeSearch':showSearch==true}" no-padding>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-card class="main-list" *ngFor="let movie of profiles | async" (click)="goTo('Details')">
+    <div class="list-img" [ngStyle]="{'background-image': 'url(' + movie.image + ')'}">
+      <ion-icon name="md-heart" color="light" class="like-icon" (click)="activeLike(item,$event)" [ngClass]="{'activeColor':item.like}"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-left>
 
+          </ion-col>
+          <ion-col col-6 text-right>
+            <ion-icon name="md-eye" color="star" class="eye-icon"></ion-icon>
+            120
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-card-content>
+      <ion-card-title class="list-heading" no-padding>
+        Title one of 1st Article
+      </ion-card-title>
+      <p class="more-info">
+        is simply dummy text of the printing & typesetting industry.
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
