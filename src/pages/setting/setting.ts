@@ -20,7 +20,7 @@ export class Setting {
   public action = false;
   isvalid: boolean;
   public todo = {};
-  tags = ['Ionic', 'Angular', 'TypeScript'];
+  tags = [''];
 
 
   constructor(public navCtrl: NavController,
@@ -33,7 +33,11 @@ export class Setting {
 
     this.nativeStorage.getItem('preference')
     .then(
-      data => console.log(data),
+      data => {console.log(data)
+      for (let entry of data) {
+          this.tags.push(entry); // 1, "string", false
+          console.log(entry)
+        }},
       error => console.error(error)
     );
 
@@ -69,7 +73,7 @@ export class Setting {
 
   onChange(val: string){
     console.log(val)
-    this.nativeStorage.setItem('preference', {property: val})
+    this.nativeStorage.setItem('preference', val)
   .then(
     () => console.log('Stored prefernces!'),
     error => console.error('Error storing item', error)

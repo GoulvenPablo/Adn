@@ -44,7 +44,7 @@ export class DatabaseProvider {
       {
 
          let profiles : any = [];
-         firebase.database().ref('profile').orderByKey().once('value', (items : any) =>
+         firebase.database().ref('profile').orderByKey().limitToLast(10).once('value', (items : any) =>
          {
             items.forEach((item) =>
             {
@@ -91,7 +91,7 @@ export class DatabaseProvider {
         let profiles : any = [];
         for (let i of input) {
             console.log(i); // "4", "5", "6"
-            firebase.database().ref('profile').orderByChild('jobtype/0/name').equalTo(i).on("child_added", function(item) {
+            firebase.database().ref('profile').orderByChild('jobtype/0/name').equalTo(i).limitToLast(10).on("child_added", function(item) {
 
                 console.log(item.val().description);
                 console.log(item.key);
@@ -117,6 +117,7 @@ export class DatabaseProvider {
             });
             observer.next(profiles);
             observer.complete();
+            console.log("reception")
 
           }
 
@@ -162,6 +163,7 @@ export class DatabaseProvider {
          });
          observer.next(profiles);
          observer.complete();
+         console.log("reception")
 
 
       });

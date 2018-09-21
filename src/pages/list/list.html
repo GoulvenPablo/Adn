@@ -21,20 +21,13 @@
 
 
 <ion-content>
-  <ion-card class="main-list" *ngFor="let item of mainList" (click)="goTo('Details')">
-    <div class="list-img" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+  <ion-card class="main-list" *ngFor="let movie of profiles | async" (click)="goTo('Details')">
+    <div class="list-img" [ngStyle]="{'background-image': 'url(' + movie.image + ')'}">
       <ion-icon name="md-heart" color="light" class="like-icon" (click)="activeLike(item,$event)" [ngClass]="{'activeColor':item.like}"></ion-icon>
       <ion-grid>
         <ion-row>
           <ion-col col-6 text-left>
-            <div class="stars">
-              <ion-icon name="md-star" color="star"></ion-icon>
-              <ion-icon name="md-star" color="star"></ion-icon>
-              <ion-icon name="md-star" color="star"></ion-icon>
-              <ion-icon name="md-star" color="star"></ion-icon>
-              <ion-icon name="md-star-half" color="star"></ion-icon>
-              <p color="dark">4.6</p>
-            </div>
+
           </ion-col>
           <ion-col col-6 text-right>
             <ion-icon name="md-eye" color="star" class="eye-icon"></ion-icon>

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
-
+import { DatabaseProvider } from '../../providers/database/database';
+import * as firebase from 'firebase';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
+import { ImageProvider } from '../../providers/image/image';
 
 @IonicPage()
 @Component({
@@ -11,15 +15,29 @@ export class List {
 
   mainList: Array<any>;
   showSearch: any;
+  public profiles: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
-    this.mainList = [{img: 'assets/img/01.png'},{img: 'assets/img/02.png'},{img: 'assets/img/03.png'},{img: 'assets/img/01.png'},{img: 'assets/img/02.png'},{img: 'assets/img/03.png'}]
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     public popoverCtrl: PopoverController,
+     private _IMG         : ImageProvider,
+
+     private _DB          : DatabaseProvider) {
+    this.mainList = [{img: 'assets/img/01.png'},
+    {img: 'assets/img/02.png'},
+    {img: 'assets/img/03.png'},
+    {img: 'assets/img/01.png'},
+    {img: 'assets/img/02.png'},
+    {img: 'assets/img/03.png'}]
+
+    this.loadAndParseProfiles();
   }
 
 // searchbar
   toggleSearch() {
     this.showSearch =!this.showSearch;
-  }  
+  }
+
 
 // like function
 activeLike(item,$event){
@@ -39,5 +57,11 @@ activeLike(item,$event){
   goTo(page){
     this.navCtrl.push(page);
   }
+
+  loadAndParseProfiles()
+   {
+      this.profiles = this._DB.renderProfiles();
+
+   }
 
 }

@@ -15,6 +15,11 @@ import { ImagePicker } from '@ionic-native/image-picker';
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
+import * as firebase from 'firebase';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
+import { ImageProvider } from '../../providers/image/image';
+
 
 @Component({
   selector: 'page-home',
@@ -61,12 +66,18 @@ export class HomePage {
       private modalCtrl: ModalController,
     private nativeStorage: NativeStorage) {
 
-        this.news = [{category:'Today News',img: 'assets/img/slide1.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Edward bush', time: '5 Mins ago'}, {category:'Political',img: 'assets/img/slide2.png', title: 'Donald TrumpThe standard Lorem Ipsum passage.', name: 'Jossef Josh', time: '15 Mins ago'}, {category:'Economist',img: 'assets/img/slide3.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}, {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
+        this.news = [{category:'Today News',img: 'assets/img/slide1.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Edward bush', time: '5 Mins ago'},
+         {category:'Political',img: 'assets/img/slide2.png', title: 'Donald TrumpThe standard Lorem Ipsum passage.', name: 'Jossef Josh', time: '15 Mins ago'},
+          {category:'Economist',img: 'assets/img/slide3.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'},
+           {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
 
           this.initializeItems();
           this.nativeStorage.getItem('preference')
           .then(
-            data => console.log(data),
+            data => {console.log(data)
+            for (let entry of data) {
+                console.log(entry); // 1, "string", false
+              }},
             error => console.error(error)
           );
 
