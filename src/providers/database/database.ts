@@ -137,7 +137,7 @@ export class DatabaseProvider {
         let profiles : any = [];
         for (let i of input) {
             console.log(i); // "4", "5", "6"
-            firebase.database().ref('offers').orderByChild('jobtype/0/name').equalTo(i).limitToLast(10).on("child_added", function(item) {
+            firebase.database().ref('offers').orderByKey().equalTo(i).limitToLast(10).on("child_added", function(item) {
 
                 console.log(item.val().description);
                 console.log(item.key);
@@ -177,46 +177,50 @@ export class DatabaseProvider {
 
    renderJobs() : Observable<any>
    {
+     console.log("ok")
+     return new Observable(observer =>
+     {
+       console.log("ok1")
 
-      return new Observable(observer =>
-      {
-        let profiles : any = [];
-
-            firebase.database().ref('offers').orderByKey().limitToLast(10).on("child_added", function(item) {
-
-                console.log(item.val().description);
-                console.log(item.key);
-                console.log(item.val().jobtype)
-                 profiles.push({
-                   id        : item.key,
-                   jobtype : item.val().jobtype,
-                   birthdate : item.val().birthdate,
-                   phonenumber : item.val().phonenumber,
-                   familyname : item.val().familyname,
-                   association : item.val().association,
-                   name : item.val().name,
-
-
-
-
-                   image     : item.val().image,
-
-                   description   : item.val().description,
+        let offers : any = [];
+        firebase.database().ref('offers').orderByKey().once('value', (items : any) =>
+        {
+           items.forEach((item) =>
+           {
+             console.log("ok2")
+             console.log(item.val().description);
+             console.log(item.key);
+             console.log(item.val().jobtype)
+              offers.push({
+                id        : item.key,
+                jobtype : item.val().jobtype,
+                birthdate : item.val().birthdate,
+                phonenumber : item.val().phonenumber,
+                familyname : item.val().familyname,
+                association : item.val().association,
+                name : item.val().name,
 
 
-              });
+
+
+                image     : item.val().image,
+
+                description   : item.val().description,
+
             });
-            observer.next(profiles);
-            observer.complete();
-            console.log("reception")
+           });
 
+           observer.next(offers);
+           observer.complete();
+        },
+        (error) =>
+        {
+           console.log("Observer error: ", error);
+           console.dir(error);
+           observer.error(error)
+        });
 
-
-
-
-
-
-      });
+     });
    }
 
 

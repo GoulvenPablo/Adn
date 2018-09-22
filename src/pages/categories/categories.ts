@@ -18,7 +18,7 @@ export class Categories {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.category = [{img: 'assets/img/11.png', title: 'Associations', page: AssociationsPage},
-     {img: 'assets/img/22.png', title: 'Stage', page: InternshipPage},
+     {img: 'assets/img/22.png', title: 'Stage', page: OffersPage},
      {img: 'assets/img/33.png', title: 'Nouveauté', page: NewsPage},
       {img: 'assets/img/44.png', title: 'Recherche', page: SearchPage},
       {img: 'assets/img/55.png', title: 'Emploi', page: OffersPage}]

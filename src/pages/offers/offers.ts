@@ -26,7 +26,7 @@ export class OffersPage {
 
 
     showSearch: any;
-    public jobs: any;
+    private offers: any;
 
     constructor(public navCtrl: NavController,
        public navParams: NavParams,
@@ -41,7 +41,7 @@ export class OffersPage {
     }
     ionViewDidLoad() {
       console.log('ionViewDidLoad ProfilePage');
-      this.loadAndParseProfiles()
+      this.loadAndParseOffers()
     }
 
   // searchbar
@@ -69,9 +69,9 @@ export class OffersPage {
       this.navCtrl.push(page);
     }
 
-    loadAndParseProfiles()
+    loadAndParseOffers()
      {
-        this.jobs = this._DB.renderJobs();
+        this.offers = this._DB.renderJobs();
         console.log("hello")
 
      }
@@ -80,7 +80,7 @@ export class OffersPage {
      addRecord()
      {
         let params = { typepage: 'offers', isEdited: true }
-        this.navCtrl.push(AddOfferPage)
+        this.navCtrl.push(AddOfferPage, params)
 
 
      }

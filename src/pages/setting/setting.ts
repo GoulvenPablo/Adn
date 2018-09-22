@@ -20,7 +20,7 @@ export class Setting {
   public action = false;
   isvalid: boolean;
   public todo = {};
-  tags = [''];
+  tags = [];
 
 
   constructor(public navCtrl: NavController,

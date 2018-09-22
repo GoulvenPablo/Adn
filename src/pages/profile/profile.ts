@@ -23,7 +23,7 @@ import 'rxjs/Rx';
 export class ProfilePage {
 
 
-  public profiles    : any;
+  private profiles    : any;
   constructor(public navCtrl       : NavController,
                 private platform     : Platform,
                 private modalCtrl    : ModalController,

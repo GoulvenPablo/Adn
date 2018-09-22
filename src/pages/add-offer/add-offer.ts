@@ -144,7 +144,7 @@ export class AddOfferPage {
             {
                let uploadedImage : any = snapshot.downloadURL;
 
-               this._DB.updateDatabase(this.profileId,
+               this._DB.updateOfferDatabase(this.profileId,
                {
 
 	              description  : description,
@@ -170,7 +170,7 @@ export class AddOfferPage {
          else
          {
 
-           this._DB.updateDatabase(this.profileId,
+           this._DB.updateOfferDatabase(this.profileId,
            {
 
 	          description  : description,
@@ -199,7 +199,7 @@ export class AddOfferPage {
          {
             let uploadedImage : any = snapshot.downloadURL;
 
-            this._DB.addToDatabase({
+            this._DB.addOfferToDatabase({
 
 	           image    : uploadedImage,
 	           description  : description,
@@ -225,7 +225,7 @@ export class AddOfferPage {
       {
 
 
-        this._DB.addToDatabase({
+        this._DB.addOfferToDatabase({
 
 
         description  : description,

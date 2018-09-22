@@ -12,11 +12,11 @@
 
    	  <ion-item-divider color="light">
          <div *ngIf="!isEditable">
-            Créer son profil
+            Ajouter une offre
          </div>
 
          <div *ngIf="isEditable">
-            Paramétres profil
+            Modifier l'offre
          </div>
    	  </ion-item-divider>
 
@@ -131,11 +131,11 @@
            padding-bottom
            [disabled]="!form.valid">
             <div *ngIf="!isEditable">
-               Ajouter nouveau profil
+               Ajouter Offre
             </div>
 
             <div *ngIf="isEditable">
-               Mettre a jour le profil
+               Mettre a jour Offre
             </div>
             </button>
    	  </ion-item>
