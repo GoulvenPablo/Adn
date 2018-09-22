@@ -80,7 +80,7 @@ export class OffersPage {
      addRecord()
      {
         let params = { typepage: 'offers', isEdited: true }
-        this.navCtrl.push(AddOfferPage, params)
+        this.navCtrl.push(AddOfferPage)
 
 
      }
