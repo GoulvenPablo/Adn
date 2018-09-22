@@ -27,28 +27,35 @@
 
 
 <ion-content>
-  <ion-card class="main-list" *ngFor="let movie of offers | async" (click)="goTo('Details')">
+  <ion-card class="main-list" *ngFor="let movie of profiles | async" (click)="goTo('Details')">
     <div class="list-img" [ngStyle]="{'background-image': 'url(' + movie.image + ')'}">
-      <ion-icon name="md-heart" color="light" class="like-icon" (click)="activeLike(item,$event)" [ngClass]="{'activeColor':item.like}"></ion-icon>
+
       <ion-grid>
         <ion-row>
           <ion-col col-6 text-left>
 
           </ion-col>
-          <ion-col col-6 text-right>
-            <ion-icon name="md-eye" color="star" class="eye-icon"></ion-icon>
-            120
-          </ion-col>
+
+
+
+
+
 
         </ion-row>
       </ion-grid>
     </div>
     <ion-card-content>
       <ion-card-title class="list-heading" no-padding>
-        Title one of 1st Article
+        <h3>Job</h3>
+        <ion-chip
+           *ngFor="let jobtype of movie.jobtype"
+           padding-left
+           padding-right
+           margin-right>{{ jobtype.name }}</ion-chip>
       </ion-card-title>
       <p class="more-info">
-        is simply dummy text of the printing & typesetting industry.
+        {{ movie.name }}
+        {{ movie.familyname }}
       </p>
     </ion-card-content>
   </ion-card>

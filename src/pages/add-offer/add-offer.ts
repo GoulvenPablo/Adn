@@ -67,12 +67,12 @@ export class AddOfferPage {
 
       });
 
-      this.profiles = firebase.database().ref('jobs/');
+      this.profiles = firebase.database().ref('offers/');
 
 
       if(params.get('isEdited'))
       {
-          let profile		    = params.get('jobs'),
+          let profile		    = params.get('offers'),
               k;
 
           //this.Name = profile.name;
