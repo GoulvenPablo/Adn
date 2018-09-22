@@ -5,7 +5,11 @@ import * as firebase from 'firebase';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { ImageProvider } from '../../providers/image/image';
+import {Platform, ModalController } from 'ionic-angular';
+import { PreloaderProvider } from '../../providers/preloader/preloader';
+
 import { ModalsPage } from '../modals/modals';
+import { AddOfferPage } from '../add-offer/add-offer';
 /**
  * Generated class for the OffersPage page.
  *
@@ -20,24 +24,24 @@ import { ModalsPage } from '../modals/modals';
 export class OffersPage {
 
 
-    mainList: Array<any>;
+
     showSearch: any;
-    public profiles: any;
+    public jobs: any;
 
     constructor(public navCtrl: NavController,
        public navParams: NavParams,
+       private modalCtrl    : ModalController,
        public popoverCtrl: PopoverController,
        private _IMG         : ImageProvider,
-
+       private _LOADER      : PreloaderProvider,
        private _DB          : DatabaseProvider) {
-      this.mainList = [{img: 'assets/img/01.png'},
-      {img: 'assets/img/02.png'},
-      {img: 'assets/img/03.png'},
-      {img: 'assets/img/01.png'},
-      {img: 'assets/img/02.png'},
-      {img: 'assets/img/03.png'}]
 
-      this.loadAndParseProfiles();
+
+
+    }
+    ionViewDidLoad() {
+      console.log('ionViewDidLoad ProfilePage');
+      this.loadAndParseProfiles()
     }
 
   // searchbar
@@ -67,7 +71,8 @@ export class OffersPage {
 
     loadAndParseProfiles()
      {
-        this.profiles = this._DB.renderProfiles();
+        this.jobs = this._DB.renderJobs();
+        console.log("hello")
 
      }
 
@@ -75,7 +80,7 @@ export class OffersPage {
      addRecord()
      {
         let params = { typepage: 'offers', isEdited: true }
-        let modal = this.navCtrl.push(ModalsPage, params)
+        this.navCtrl.push(AddOfferPage, params)
 
 
      }

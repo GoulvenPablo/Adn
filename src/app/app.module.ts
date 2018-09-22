@@ -53,6 +53,7 @@ import { AssociationsPage } from '../pages/associations/associations';
 import { SearchPage } from '../pages/search/search';
 import { InternshipPage } from '../pages/internship/internship';
 import { NewsPage } from '../pages/news/news';
+import { AddOfferPage } from '../pages/add-offer/add-offer';
 
 
 
@@ -88,7 +89,8 @@ var config = {
       SearchPage,
       AssociationsPage,
       InternshipPage,
-      NewsPage
+      NewsPage,
+      AddOfferPage
 
   ],
   imports: [
@@ -126,7 +128,8 @@ var config = {
       SearchPage,
       AssociationsPage,
       InternshipPage,
-      NewsPage
+      NewsPage,
+      AddOfferPage
   ],
   providers: [
 

@@ -221,7 +221,7 @@ export class DatabaseProvider {
 
 
 
-   getOwnProfileProfile() : Observable<any>
+   getOwnProfile() : Observable<any>
    {
      var myUserId = firebase.auth().currentUser.uid;
 
