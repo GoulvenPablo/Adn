@@ -9,6 +9,10 @@ import {HomePage}from'../home/home';
 
 import { ResetPassword } from '../reset-password/reset-password';
 import { Signup } from '../signup/signup';
+
+import { ModalsPage } from '../modals/modals';
+
+import firebase from 'firebase';
 /**
  * Generated class for the Login page.
  *
@@ -42,7 +46,16 @@ export class Login {
         } else {
             this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then(authData => {
                 this.loading.dismiss().then(() => {
+                  var name = firebase.auth().currentUser.displayName;
+
+
+                  if (name == null){
+                    this.nav.setRoot(ModalsPage);
+                    console.log(name)
+                  }else{
                     this.nav.setRoot(HomePage);
+                  }
+
                     console.log(this.loginForm.value.email);
                 });
             }, error => {

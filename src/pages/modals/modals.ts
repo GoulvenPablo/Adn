@@ -243,20 +243,29 @@ export class ModalsPage {
          })
             .then((data) =>
             {
+              var user = firebase.auth().currentUser;
+
+                user.updateProfile({
+                  displayName: name + " " +familyname,
+                  photoURL: "https://example.com/jane-q-user/profile.jpg"
+                }).then(function() {
+  // Update successful.
+              }).catch(function(error) {
+  // An error happened.
+              });
+
               this.navCtrl.setRoot(HomePage);
+              console.log("hello")
+
+
             //   this._LOADER.hidePreloader();
             });
 
 
       }
-      this.closeModal(true);
-   }
 
 
 
-   closeModal(val = null)
-   {
-      this.viewCtrl.dismiss(val);
    }
 
 

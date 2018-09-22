@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { ImageProvider } from '../../providers/image/image';
-
+import { ModalsPage } from '../modals/modals';
 /**
  * Generated class for the OffersPage page.
  *
@@ -68,6 +68,15 @@ export class OffersPage {
     loadAndParseProfiles()
      {
         this.profiles = this._DB.renderProfiles();
+
+     }
+
+
+     addRecord()
+     {
+        let params = { typepage: 'offers', isEdited: true }
+        let modal = this.navCtrl.push(ModalsPage, params)
+
 
      }
 

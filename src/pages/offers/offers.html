@@ -17,6 +17,12 @@
   <ion-toolbar class="search-toolbar" [ngClass]="{'activeSearch':showSearch==true}" no-padding>
     <ion-searchbar></ion-searchbar>
   </ion-toolbar>
+  <button
+     ion-button
+     icon-only
+     (click)="addRecord()">
+ <ion-icon name="add"></ion-icon>
+  </button>
 </ion-header>
 
 
