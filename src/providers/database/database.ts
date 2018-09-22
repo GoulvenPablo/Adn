@@ -137,7 +137,7 @@ export class DatabaseProvider {
         let profiles : any = [];
         for (let i of input) {
             console.log(i); // "4", "5", "6"
-            firebase.database().ref('jobs').orderByChild('jobtype/0/name').equalTo(i).limitToLast(10).on("child_added", function(item) {
+            firebase.database().ref('offers').orderByChild('jobtype/0/name').equalTo(i).limitToLast(10).on("child_added", function(item) {
 
                 console.log(item.val().description);
                 console.log(item.key);
@@ -182,7 +182,7 @@ export class DatabaseProvider {
       {
         let profiles : any = [];
 
-            firebase.database().ref('jobs').orderByKey().limitToLast(10).on("child_added", function(item) {
+            firebase.database().ref('offers').orderByKey().limitToLast(10).on("child_added", function(item) {
 
                 console.log(item.val().description);
                 console.log(item.key);
@@ -281,6 +281,28 @@ export class DatabaseProvider {
       {
          let addRef = firebase.database().ref('profile');
          addRef.push(profileObj);
+         resolve(true);
+      });
+   }
+
+
+   addOfferToDatabase(offerObj) : Promise<any>
+   {
+      return new Promise((resolve) =>
+      {
+         let addRef = firebase.database().ref('offers');
+         addRef.push(offerObj);
+         resolve(true);
+      });
+   }
+
+
+   updateOfferDatabase(id, offerObj) : Promise<any>
+   {
+      return new Promise((resolve) =>
+      {
+         var updateRef = firebase.database().ref('offers').child(id);
+	      updateRef.update(offerObj);
          resolve(true);
       });
    }

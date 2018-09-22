@@ -31,8 +31,10 @@ export class Categories {
 
 //goTo function
   goTo(page){
-    this.navCtrl.push(page);
-    console.log(page)
+    let params = { searchvalue: page.name.toString(), isEdited: true }
+
+    this.navCtrl.push(page, params);
+    console.log(page.name)
   }
 
 

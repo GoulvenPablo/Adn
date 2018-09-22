@@ -164,6 +164,7 @@ export class ModalsPage {
 	           })
                .then((data) =>
                {
+                 this.navCtrl.setRoot(HomePage);
                 //  this._LOADER.hidePreloader();
                });
 
@@ -189,6 +190,7 @@ export class ModalsPage {
 	       })
            .then((data) =>
            {
+             this.navCtrl.setRoot(HomePage);
             //  this._LOADER.hidePreloader();
            });
 	     }

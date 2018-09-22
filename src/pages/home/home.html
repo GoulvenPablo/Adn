@@ -14,12 +14,7 @@
       <button ion-button tappable (click)="ModifyProfile()">
         <ion-icon name="cog"></ion-icon>
       </button>
-      <ion-tags-input
-         [(ngModel)]="items"
-         (ionFocus)="onFocus($event)"
-         (ionBlur)="onBlur($event)"
-         (onChange)="onChange($event)">
-       </ion-tags-input>
+
       <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="search()">
         <ion-icon name="search"></ion-icon> search
       </button>
