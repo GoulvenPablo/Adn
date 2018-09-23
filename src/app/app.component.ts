@@ -16,6 +16,7 @@ import { ActionSheetController } from 'ionic-angular';
 import { ModalsPage } from '../pages/modals/modals';
 
 
+
 export interface MenuItem {
     title: string;
     component: any;
@@ -29,6 +30,7 @@ export class MyApp {
   appMenuItems: Array<MenuItem>;
   rootPage:any = TabsPage;
   pages: Array<any>;
+  profiles: any;
 
   constructor(public platform: Platform,
      public statusBar: StatusBar,
@@ -65,6 +67,11 @@ export class MyApp {
 
 
 
+
+
+
+
+
           } else {
               console.log("login");
 
@@ -90,6 +97,7 @@ export class MyApp {
                   console.log("  Name: " + profile.displayName);
                   console.log("  Email: " + profile.email);
                   console.log("  Photo URL: " + profile.photoURL);
+
 
                 });
 
@@ -131,10 +139,14 @@ export class MyApp {
     console.log("ok")
   }
 
+
   logOut() {
       this.authData.logoutUser().then(() => {
           this.nav.setRoot(Login);
       });
+
+
+
 
 
   }

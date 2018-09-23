@@ -40,6 +40,7 @@ export class ProfilePage {
   loadAndParseProfiles()
    {
       this.profiles = this._DB.getOwnProfile();
+      console.log("ok")
 
    }
 

@@ -47,7 +47,7 @@ export class Details {
         this.Name = profile.name;
         this.familyName = profile.familyname;
         this.profileImage       = profile.image;
-        this.newProfileImage        = profile.image;
+        
         this.profileId          = profile.id;
 
 
