@@ -12,7 +12,7 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { ProfilePage } from '../profile/profile';
 import { HomePage } from '../home/home';
 import firebase from 'firebase';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @IonicPage()
 @Component({
@@ -47,7 +47,8 @@ export class ModalsPage {
       private _IMG          : ImageProvider,
       public viewCtrl       : ViewController,
       private _LOADER       : PreloaderProvider,
-      private _DB           : DatabaseProvider
+      private _DB           : DatabaseProvider,
+    private nativeStorage: NativeStorage
    )
    {
       this.form 		= _FB.group({
@@ -265,6 +266,11 @@ export class ModalsPage {
 
 
       }
+      this.nativeStorage.setItem('ownprofile', this.profiles)
+    .then(
+      () => console.log('Stored prefernces!'),
+      error => console.error('Error storing item', error)
+    );
 
 
 

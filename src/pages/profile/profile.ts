@@ -9,6 +9,7 @@ import { DatabaseProvider } from '../../providers/database/database';
 import * as firebase from 'firebase';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -29,7 +30,8 @@ export class ProfilePage {
                 private modalCtrl    : ModalController,
                 private _IMG         : ImageProvider,
                 private _LOADER      : PreloaderProvider,
-                private _DB          : DatabaseProvider) {
+                private _DB          : DatabaseProvider,
+              private nativeStorage: NativeStorage) {
   }
 
   ionViewDidLoad() {
@@ -41,6 +43,14 @@ export class ProfilePage {
    {
       this.profiles = this._DB.getOwnProfile();
       console.log("ok")
+
+        console.log(this.profiles)
+        this.nativeStorage.getItem('ownprofile')
+      .then(
+        data => {console.log(data)
+        this.profiles = data},
+        error => console.error(error)
+      );
 
    }
 
