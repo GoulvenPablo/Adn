@@ -28,7 +28,7 @@
 
 
        showSearch: any;
-        private profiles    : any;
+        private jobsRender    : any;
         constructor(public navCtrl       : NavController,
                       private platform     : Platform,
                       private modalCtrl    : ModalController,
@@ -45,7 +45,7 @@
 
         loadAndParseProfiles()
          {
-            this.profiles = this._DB.renderJobs();
+            this.jobsRender = this._DB.renderJobs();
 
          }
 

@@ -27,7 +27,7 @@
 
 
 <ion-content>
-  <ion-card class="main-list" *ngFor="let movie of profiles | async" (click)="goTo('Details',movie)">
+  <ion-card class="main-list" *ngFor="let movie of jobsRender | async" (click)="goTo('Details',movie)">
     <div class="list-img" [ngStyle]="{'background-image': 'url(' + movie.image + ')'}">
 
       <ion-grid>

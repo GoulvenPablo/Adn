@@ -16,9 +16,9 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import * as firebase from 'firebase';
-import { Http } from '@angular/http';
+
 import 'rxjs/Rx';
-import { ImageProvider } from '../../providers/image/image';
+
 
 
 @Component({
@@ -31,24 +31,14 @@ export class HomePage {
   darkHeader: any;
   slider: any;
   currentSliderIndex= 0;
-  jobsRender: any;
- private _COLL 		: string 			= "Users";
+  private jobsRender: any;
+
 
  searchQuery: string = '';
  items: string[];
  searchvalue: string = '';
  @ViewChild(Content) content: Content;
   @ViewChild(Slides) slides: Slides;
-
-
-
-
-
- private _DOC 		: string 			= "Xy76Re34SdFR1";
-
-
-
- private _CONTENT  	: any;
 
 
 
@@ -74,12 +64,19 @@ export class HomePage {
 
           this.initializeItems();
           this.jobsRender = this._DB.renderJobs();
+
           this.nativeStorage.getItem('preference')
           .then(
             data => {console.log(data)
+              console.log("storedItem")
             for (let entry of data) {
                 console.log(entry);
-                this.jobsRender = this._DB.renderJobs();
+
+                this.nativeStorage.setItem('preference', this.jobsRender)
+              .then(
+                () => console.log('Stored prefernces!'),
+                error => console.error('Error storing item', error)
+              );
 
               }},
             error => console.error(error)
@@ -88,6 +85,8 @@ export class HomePage {
 
 
   }
+
+
 
   initializeItems() {
     this.items = [

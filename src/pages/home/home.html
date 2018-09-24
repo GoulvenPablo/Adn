@@ -22,17 +22,11 @@
 
 
 <<ion-content fullscreen  (ionScroll)="scrollingFun($event)">
-  <ion-slides class="app-slider" pager="true" (ionSlideDidChange)="slideChanged()">
+  <ion-slides class="app-slider" pager="true" >
     <ion-slide *ngFor="let movie of jobsRender | async">
         <div class="slide-content">
-          <img src="movie.image" class="slide-img" />
-          <div class="slide-details" (click)="goTo('List')">
-            <h3>{{slide.title}}</h3>
-            <ion-row>
-              <ion-col col-6 text-left>{{slide.name}}</ion-col>
-              <ion-col col-6 text-right>{{slide.time}}</ion-col>
-            </ion-row>
-          </div>
+          <img src="{{movie.image}}" class="slide-img" />
+
           <!--arrow for scroll to show details-->
           <button ion-button clear class="more-detail-icon" (click)="goToBottom()">
             <ion-icon name="ios-arrow-up-outline" color="light" text-center></ion-icon>
