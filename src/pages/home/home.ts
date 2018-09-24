@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController ,PopoverController, AlertController, Platform , ModalController} from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { Login } from '../login/login';
+
 import {NotificationsPage} from "../notifications/notifications";
 import { NavParams, Content, Slides} from 'ionic-angular';
 import {SearchResultPage}from '../search-result/search-result';
@@ -68,13 +69,16 @@ export class HomePage {
           this.nativeStorage.getItem('preference')
           .then(
             data => {console.log(data)
+              if(data == null){
+                console.log("no data")
+              }
               console.log("storedItem")
             for (let entry of data) {
                 console.log(entry);
 
-                this.nativeStorage.setItem('preference', this.jobsRender)
+                this.nativeStorage.setItem('jobs', this.jobsRender)
               .then(
-                () => console.log('Stored prefernces!'),
+                () => console.log('Stored jobs!'),
                 error => console.error('Error storing item', error)
               );
 
@@ -114,7 +118,8 @@ export class HomePage {
     });
   }
 
-  goToBottom(){
+  goToBottom(job){
+    console.log(job)
     this.content.scrollTo(0,window.innerHeight-55,1000);
   }
 

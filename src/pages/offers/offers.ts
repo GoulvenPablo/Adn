@@ -2,7 +2,7 @@
 
 
     import { Component } from '@angular/core';
-    import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+    import { NavController, NavParams, PopoverController } from 'ionic-angular';
     import { DatabaseProvider } from '../../providers/database/database';
     import * as firebase from 'firebase';
     import { Http } from '@angular/http';
