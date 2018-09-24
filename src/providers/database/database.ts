@@ -44,7 +44,7 @@ export class DatabaseProvider {
       {
 
          let profiles : any = [];
-         firebase.database().ref('profile').orderByKey().once('value', (items : any) =>
+         firebase.database().ref('profile').orderByKey().limitToLast(10).once('value', (items : any) =>
          {
             items.forEach((item) =>
             {
@@ -183,7 +183,7 @@ export class DatabaseProvider {
        console.log("ok1")
 
         let offers : any = [];
-        firebase.database().ref('offers').orderByKey().once('value', (items : any) =>
+        firebase.database().ref('offers').orderByKey().limitToLast(10).once('value', (items : any) =>
         {
            items.forEach((item) =>
            {

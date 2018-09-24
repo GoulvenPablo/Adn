@@ -31,6 +31,7 @@ export class HomePage {
   darkHeader: any;
   slider: any;
   currentSliderIndex= 0;
+  jobsRender: any;
  private _COLL 		: string 			= "Users";
 
  searchQuery: string = '';
@@ -72,11 +73,14 @@ export class HomePage {
            {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
 
           this.initializeItems();
+          this.jobsRender = this._DB.renderJobs();
           this.nativeStorage.getItem('preference')
           .then(
             data => {console.log(data)
             for (let entry of data) {
-                console.log(entry); // 1, "string", false
+                console.log(entry);
+                this.jobsRender = this._DB.renderJobs();
+
               }},
             error => console.error(error)
           );
