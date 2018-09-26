@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-
+    import { DatabaseProvider } from '../../providers/database/database';
+import * as firebase from 'firebase';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
 
 @IonicPage()
 @Component({
@@ -30,7 +33,10 @@ export class Details {
   public familyName          : string  = '';
   public isEditable       : boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+      public modalCtrl: ModalController,
+    private _DB          : DatabaseProvider) {
     this.rate=2;
 
     if(navParams.get('isEdited'))
@@ -47,7 +53,7 @@ export class Details {
         this.Name = profile.name;
         this.familyName = profile.familyname;
         this.profileImage       = profile.image;
-        
+
         this.profileId          = profile.id;
 
 
@@ -78,6 +84,12 @@ export class Details {
   commentModal() {
     let pageModal = this.modalCtrl.create('CommentmodalPage');
     pageModal.present();
+  }
+
+  Apply(){
+    //créer fonction candidature
+
+
   }
 
 }
