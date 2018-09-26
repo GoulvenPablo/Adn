@@ -44,7 +44,7 @@ export class ProfilePage {
       this.profiles = this._DB.getOwnProfile();
       console.log("ok")
 
-        console.log(this.profiles)
+
         this.nativeStorage.getItem('ownprofile')
       .then(
         data => {console.log(data)

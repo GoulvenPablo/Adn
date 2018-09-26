@@ -64,25 +64,50 @@ export class HomePage {
            {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
 
           this.initializeItems();
-          this.jobsRender = this._DB.renderJobs();
+
 
           this.nativeStorage.getItem('preference')
           .then(
             data => {console.log(data)
               if(data == null){
                 console.log("no data")
-              }
-              console.log("storedItem")
-            for (let entry of data) {
-                console.log(entry);
+              }else{
+                this.nativeStorage.getItem('jobs')
+              .then(
+                content => {
+                  if(content == null){
+                    for (let entry of data) {
+                        this.jobsRender = this._DB.renderJobs()
+                      }
+                    console.log("no data")
+                  }else{
+                    for (let entry of content) {
+                        console.log(entry);
 
-                this.nativeStorage.setItem('jobs', this.jobsRender)
+                        this.jobsRender.push(entry)
+                      .then(
+                        () => console.log('Stored jobs!'),
+                        error => console.error('Error storing item', error)
+                      );
+
+                      }
+
+                  }},
+                error => console.error('Error storing item', error)
+              ).then(
+                () => this.nativeStorage.setItem('jobs', this.jobsRender)
               .then(
                 () => console.log('Stored jobs!'),
                 error => console.error('Error storing item', error)
+              ),
+                error => console.error('Error storing item', error)
               );
 
-              }},
+
+
+              }
+
+            },
             error => console.error(error)
           );
 

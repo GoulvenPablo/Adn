@@ -73,6 +73,11 @@ export class Setting {
 
   onChange(val: string){
     console.log(val)
+    this.nativeStorage.setItem('jobs', null)
+  .then(
+    () => console.log('Stored jobs!'),
+    error => console.error('Error storing item', error)
+  );
     this.nativeStorage.setItem('preference', val)
   .then(
     () => console.log('Stored prefernces!'),
