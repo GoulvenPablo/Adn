@@ -73,38 +73,8 @@ export class HomePage {
               if(data == null){
                 console.log("no data")
               }else{
-                this.nativeStorage.getItem('jobs')
-              .then(
-                content => {
-                  if(content == null){
-                    for (let entry of data) {
-                        this.jobsRender = this._DB.renderJobs()
-                      }
-                    console.log("no data")
-                  }else{
-                    for (let entry of content) {
-                        console.log(entry);
 
-                        this.jobsRender.push(entry)
-                      .then(
-                        () => console.log('Stored jobs!'),
-                        error => console.error('Error storing item', error)
-                      );
-
-                      }
-
-                  }},
-                error => console.error('Error storing item', error)
-              ).then(
-                () => this.nativeStorage.setItem('jobs', this.jobsRender)
-              .then(
-                () => this.slideChanged(),
-
-                error => console.error('Error storing item', error)
-              ),
-                error => console.error('Error storing item', error)
-              );
-
+                this.jobsRender = this._DB.renderJobs()
 
 
               }
