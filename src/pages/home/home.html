@@ -23,7 +23,7 @@
 
 <<ion-content fullscreen  (ionScroll)="scrollingFun($event)" >
   <ion-slides class="app-slider" pager="true" (ionSlideDidChange)="slideChanged()">
-    <ion-slide *ngFor="let movie of jobsRender | async" >
+    <ion-slide *ngFor="let movie of jobsRender | async" (click)="goTo('Details',movie)">
         <div class="slide-content">
           <img src="{{movie.image}}" class="slide-img" />
 

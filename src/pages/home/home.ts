@@ -158,7 +158,7 @@ export class HomePage {
     console.log(this.currentSliderIndex)
     this.ActualOffer = this.jobsRender[this.currentSliderIndex];
 
-    console.log(this.jobsRender.description)
+
     if(this.currentSliderIndex==this.news.length) this.currentSliderIndex=this.news.length-1;
   }
 
@@ -172,6 +172,7 @@ export class HomePage {
   }
 
   scrollingFun(ev){
+
     ev.domWrite(() => {
         this.updateHeader(ev);
       //
@@ -192,8 +193,13 @@ export class HomePage {
     pageModal.present();
   }
 
-  goTo(page){
-    this.navCtrl.push(page);
+  goTo(page, profile){
+
+    let params = { profile: profile, isEdited: true }
+    this.navCtrl.push(page , params);
+
+
+
   }
 
    search(){
