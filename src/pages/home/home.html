@@ -21,9 +21,9 @@
 </ion-header>
 
 
-<<ion-content fullscreen  (ionScroll)="scrollingFun($event)">
-  <ion-slides class="app-slider" pager="true" >
-    <ion-slide *ngFor="let movie of jobsRender | async">
+<<ion-content fullscreen  (ionScroll)="scrollingFun($event)" >
+  <ion-slides class="app-slider" pager="true" (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let movie of jobsRender | async" >
         <div class="slide-content">
           <img src="{{movie.image}}" class="slide-img" />
 
@@ -37,7 +37,7 @@
 
  <!--more details of new-->
   <div class="detail-of-new">
-    <div class="details-content">
+    <div class="details-content"  >
       <div class="details">
         <ion-card-title class="list-heading" no-padding>
         Title one of 1st Article <span class="article-info">12 May 2017</span>
@@ -48,7 +48,7 @@
         <span class="article-info">Writer : Martin Adam</span>
       </div>
 
-      <button ion-button block color="primary">Comments</button>
+      <button ion-button block color="primary" (click)="Apply(movie)"> Apply </button>
 
       <div class="comments">
         <ion-item no-lines>

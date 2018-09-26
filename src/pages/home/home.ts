@@ -34,7 +34,7 @@ export class HomePage {
   currentSliderIndex= 0;
   private jobsRender: any;
 
-
+  private ActualOffer:any;
  searchQuery: string = '';
  items: string[];
  searchvalue: string = '';
@@ -64,6 +64,7 @@ export class HomePage {
            {category:'Sports',img: 'assets/img/slide4.png', title: 'The standard Lorem Ipsum passage, used since the 1500s', name: 'Lela Edward', time: '10 Mins ago'}]
 
           this.initializeItems();
+          this.jobsRender = this._DB.renderJobs()
 
 
           this.nativeStorage.getItem('preference')
@@ -97,7 +98,8 @@ export class HomePage {
               ).then(
                 () => this.nativeStorage.setItem('jobs', this.jobsRender)
               .then(
-                () => console.log('Stored jobs!'),
+                () => this.slideChanged(),
+
                 error => console.error('Error storing item', error)
               ),
                 error => console.error('Error storing item', error)
@@ -126,6 +128,8 @@ export class HomePage {
 
 
 
+
+
   logOut() {
       this.authData.logoutUser().then(() => {
           this.navCtrl.setRoot(Login);
@@ -151,6 +155,10 @@ export class HomePage {
 //currentSliderIndex function
   slideChanged() {
     this.currentSliderIndex = this.slides.getActiveIndex();
+    console.log(this.currentSliderIndex)
+    this.ActualOffer = this.jobsRender[this.currentSliderIndex];
+
+    console.log(this.jobsRender.description)
     if(this.currentSliderIndex==this.news.length) this.currentSliderIndex=this.news.length-1;
   }
 
@@ -160,6 +168,7 @@ export class HomePage {
     var lengthSlider=document.getElementsByClassName("app-slider").length -1;
     this.headerbg = document.getElementsByClassName("my-header")[lengthHeader];
     this.slider = document.getElementsByClassName("app-slider")[lengthSlider];
+
   }
 
   scrollingFun(ev){
@@ -217,6 +226,11 @@ export class HomePage {
 
   onBlur() {
     console.log('Blur')
+  }
+
+  Apply(job){
+
+
   }
 
 
